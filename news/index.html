@@ -258,17 +258,17 @@ console.log($(document).width())
         <div class="container" >
             <div class="title">
                 <div class="text-align"  >
-                    <h1 style="color: rgb(0,191,111);display: inline-block;font-family: 'Heebo', sans-serif;">TAGC </h1><h1 style="display: inline-block; font-family: 'Heebo', sans-serif;margin: 10px;color: white;">LATEST NEWS</h1>
+                    <h1 style="color: rgb(0,191,111);display: inline-block;font-family: 'Heebo', sans-serif;">TAGC </h1>
+                    <h1 style="display: inline-block; font-family: 'Heebo', sans-serif;margin: 10px;color: white;">LATEST NEWS</h1>
                 </div>
             </div>
             <div class="newsitems">
                 {% for post in site.posts  limit:3 %}
                 {% assign my_counter = my_counter | plus: 1 %}
-    
-    {% assign image = post.pid  %}
-    <div class="col-8 newz" id="img{{my_counter}}" style="margin-top: 20px; margin-right: 10px;">
-        <img src="/assets/img/newspics/{{image}}.webp" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain; max-width: 100%; max-height: 50vh; border-radius: 25px;">
-    </div>
+                {% assign image = post.pid  %}
+                <div class="col-8 newz" id="img{{my_counter}}" style="display: flex; justify-content: center; align-items: center; margin-top: 20px; margin-right: 10px; height: 50vh; ">
+                    <img src="/assets/img/newspics/{{image}}.webp" id="mainPhoto{{my_counter}}" class="mainPhoto" style="object-fit: contain; max-width: 100%; max-height: 100%; border-radius: 25px;background-color:black">
+                </div>
     
     
                 {% if post.link != "none" %}
@@ -295,10 +295,9 @@ console.log($(document).width())
           <div class="bottomevents2" >
             <div class="row" style="height: inherit;">
               <div class="col-4" style="display: flex; align-items: center; justify-content: center; height: inherit;">
-                <p  >Omics Course in Dhaka-Bangladesh</p>
+                <p  >Omics Course here in London</p>
               </div>
               <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
-                <p  >Omics Course here in London</p>
               </div>
               <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
                 <p></p>

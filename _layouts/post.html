@@ -291,10 +291,8 @@ article a:hover, a:active, a:focus {
 </body>
 <script>
 $("img").one("load", function() {
-    // do stuff
   }).each(function() {
     if(this.complete) {
-        $(this).load(); // For jQuery < 3.0 
-        // $(this).trigger('load'); // For jQuery >= 3.0 
+        $(this).load(); 
     }
   });</script>

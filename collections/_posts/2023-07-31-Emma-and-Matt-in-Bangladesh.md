@@ -1,10 +1,10 @@
 ---
 layout: post
 pid: mattandemmainbangladesh
-hidden: true
+hidden: false
 author: jthorpe
 link: none
-brief:  Dr Matt Higgins and Emma Collins travel to reveal Positive Initial Results for Xeno-Monitoring in Dhaka
+brief:  Dr Matt Higgins and Emma Collins travel to Dhaka to reveal positive initial results for Xeno-Monitoring
 excerpt_separator: "<!--more-->"
 ---
 
