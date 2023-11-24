@@ -414,6 +414,11 @@ border-radius: 50%;
   display: inline;
       margin: 10px;
       text-align: center;
+      
+}
+.peep{
+  padding-left:15px;
+  padding-right: 15px;
 }
 .peep,.image{
   margin: 10px;
@@ -522,6 +527,10 @@ border-radius: 50%;
     width: 150%;
     margin-left: 10px;
 }    
+}
+.peep-container {
+  position: relative;
+  
 }
 </style>
 
@@ -634,15 +643,15 @@ border-radius: 50%;
           <div class="tags " >
             <p>People who worked on this project:</p>
             {% assign people = projects.people  %}
-            <span class="badge d-flex justify-content-center align-self-center" >
+            <span class="badge d-flex justify-content-center align-self-center">
 
-        {% for peep in people %}
-            <p class="peep">{{peep}}</p>
-        {% endfor %}
       </span>
       <span class="badge d-flex justify-content-center align-self-center" >
         {% for peep in people %}
-        <img class="image" src="/assets/img/{{peep}}.jpg" style="width: 40px; height: 40px;" >
+        <div class="peep-container">
+          <p class="peep" style="color: #000;">{{peep}}</p>
+          <img class="image" src="/assets/img/{{peep}}.jpg" style="width:75px; height: 75px; border-radius:25px" >
+        </div>
         {% endfor %}
 
       </span>
@@ -687,13 +696,14 @@ border-radius: 50%;
             {% assign people = projects.people  %}
             <span class="badge d-flex justify-content-center align-self-center" >
 
-        {% for peep in people %}
-            <p class="peep">{{peep}}</p>
-        {% endfor %}
+       
       </span>
       <span class="badge d-flex justify-content-center align-self-center" >
         {% for peep in people %}
-        <img class="image" src="/assets/img/{{peep}}.jpg" style="width: 40px; height: 40px;" >
+        <div class="peep-container">
+          <p class="peep" style="color: #000;">{{peep}}</p>
+          <img class="image" src="/assets/img/{{peep}}.jpg" style="width:75px; height: 75px; border-radius:25px" >
+        </div>
         {% endfor %}
 
       </span>
