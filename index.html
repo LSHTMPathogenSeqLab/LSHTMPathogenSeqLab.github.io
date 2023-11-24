@@ -455,9 +455,8 @@ h5{
   z-index: auto; /* Reset z-index to default */
   position: relative; /* Confirm that positioning is not causing issues */
 }
-.checkout{
-  
-font-family: ;
+.overlapper{
+  z-index: 99999999999;
 }
 </style>
         
@@ -643,7 +642,7 @@ font-family: ;
             
            
             </div>
-           <div class="col-md-4" style="margin-top:10px">
+           <div class="col-md-4 overlapper" style="margin-top:10px">
             
             <div class="newsImages" >
               {% for post in site.posts  limit:3 %}
