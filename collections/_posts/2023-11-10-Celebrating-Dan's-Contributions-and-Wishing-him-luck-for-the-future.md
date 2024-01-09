@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: IMG_2007
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  Celebrating Dan's Contributions and Wishing Him Well in His New Endeavor
