@@ -1,6 +1,6 @@
 ---
 layout: people
-alumni: false
+alumni: true
 pid: ktrisakul
 forname: Kanwara
 surname: Trisakul
