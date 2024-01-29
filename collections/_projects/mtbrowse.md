@@ -1,11 +1,11 @@
 ---
 layout: default
 name: MTBrowse
-pid: rnaexplore
+pid: mtbrowse
 theme: 
   - tuberculosis
   - software
-link:  https://genomics.lshtm.ac.uk/rnaexplore/#
+link:  https://genomics.lshtm.ac.uk/mtbrowse/#
 people:
   - jthorpe
 highlighted: true
