@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: workshopindhaka
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  Return to Bangladesh for a workshop in 'omics

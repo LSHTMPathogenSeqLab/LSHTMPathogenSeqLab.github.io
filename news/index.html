@@ -295,9 +295,7 @@ console.log($(document).width())
           <div class="bottomevents2" >
             <div class="row" style="height: inherit;">
               <div class="col-4" style="display: flex; text-align: center; align-items: center; justify-content: center; height: inherit;">
-                <p  >Prof. Taane Clark is presenting at the  
-                <br> 49th Annual Topics in Infection of the RSTMH 
-                <br>(Friday 26th January 2024) </p>
+                
               </div>
               <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
               </div>
@@ -329,12 +327,12 @@ console.log($(document).width())
                   
                     <div class="col-xl-4" style="max-height: 450px; overflow-y: hidden;">
                       <div class="title">
-                        <h3 style="font-family: 'Heebo', sans-serif; ;"><a href="{{ link }}">{{ post.title }}</a></h3>
+                        <h3 style="font-family: 'Heebo', sans-serif; text-align: center;"><a href="{{ link }}">{{ post.title }}</a></h3>
                       </div>
-                      <div class="content">
+                      <div class="content" style="text-align: center;">
                         {{ post.brief }}
                       </div>
-                      <div class="author">
+                      <div class="author" style="text-align: center;">
                         <hr>
                         <p>
                           <img src="/assets/img/{{ author.pid }}.jpg" class="img-thumbnail" style="width: 3rem;" alt="..." onerror="this.onerror=null">

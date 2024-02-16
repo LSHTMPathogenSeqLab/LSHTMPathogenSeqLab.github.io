@@ -2,9 +2,9 @@
 layout: post
 pid: anopholesbijagos
 hidden: true
-author: jthorpe
+author: smoss
 link: https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-023-06085-5
-brief:  Sophie and Susanas new paper on anopholes mosquitos is released
+brief:  New paper on anopholes mosquitos is released
 excerpt_separator: "<!--more-->"
 ---
 

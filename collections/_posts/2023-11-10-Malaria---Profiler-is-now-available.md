@@ -2,7 +2,7 @@
 layout: post
 pid: malariaprofiler
 hidden: false
-author: jthorpe
+author: jphelan
 link: https://bioinformatics.lshtm.ac.uk/malaria-profiler/
 brief:  Malaria-Profiler is a user-friendly tool that can rapidly and accurately predict the geographical regional source and anti-malarial drug resistance profiles across large numbers of samples with WGS data. 
 excerpt_separator: "<!--more-->"

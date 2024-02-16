@@ -2,7 +2,7 @@
 layout: post
 pid: labinabarn
 hidden: false
-author: jthorpe
+author: jphelan
 link: none
 brief:  Dr Dan Ward and Dr Jody Phelan visit Zimbabwe to teach students about nanopore technology
 excerpt_separator: "<!--more-->"

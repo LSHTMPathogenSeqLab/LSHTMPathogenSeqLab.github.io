@@ -2,7 +2,7 @@
 layout: post
 pid: danAdventures
 hidden: false
-author: jthorpe
+author: dward
 link: none
 brief:  Dr Dan Ward returns from his trip gathering samples and teaching teams in Brazil about nanopore sequencing
 excerpt_separator: "<!--more-->"

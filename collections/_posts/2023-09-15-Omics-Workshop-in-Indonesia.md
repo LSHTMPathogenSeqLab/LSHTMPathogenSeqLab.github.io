@@ -2,7 +2,7 @@
 layout: post
 pid: IndonesiaCourse
 hidden: false
-author: jthorpe
+author: gngwana
 link: none
 brief:  Prof Taane Clark, Dr Jody Phelan, and PhD students Gabbie Ngwana-Joseph and Linfeng Wang travel to Indonesia for a new 'Omics Course
 excerpt_separator: "<!--more-->"
