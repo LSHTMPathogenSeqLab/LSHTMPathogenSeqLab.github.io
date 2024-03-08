@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: omicsLdn
-hidden: true
+hidden: false
 author: jthorpe
 link: none
 brief:  Hosted another 'Omics course here in London
