@@ -1,0 +1,761 @@
+---
+layout: 
+title: Trinity Project
+---
+
+<head>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        window.scrollTo(0, 0);
+    });
+    </script>
+<links>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</links>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.title }}</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+ 
+</head>
+
+
+
+<!-- Chart code -->
+<script>
+
+
+
+function createChart(){
+    return new Promise((resolve, reject) => {
+
+    
+    am5.ready(function() {
+
+var root = am5.Root.new("chartdiv");
+
+
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
+
+
+var chart = root.container.children.push(am5map.MapChart.new(root, {
+  panX: "none",
+  panY: "none",
+  projection: am5map.geoOrthographic(),
+  paddingBottom: 20,
+  paddingTop: 20,
+  paddingLeft: 20,
+  paddingRight: 20,
+  wheelX:"none",
+  wheelY: "none",
+  homeZoomLevel: 1,
+}));
+
+
+
+var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+  geoJSON: am5geodata_worldLow 
+}));
+
+polygonSeries.mapPolygons.template.setAll({
+  tooltipText: "{name}",
+  toggleKey: "active",
+  interactive: true
+});
+
+polygonSeries.mapPolygons.template.states.create("hover", {
+  fill: root.interfaceColors.get("primaryButtonHover")
+});
+
+polygonSeries.mapPolygons.template.states.create("active", {
+  fill: root.interfaceColors.get("primaryButtonHover")
+});
+
+
+var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
+backgroundSeries.mapPolygons.template.setAll({
+  fill: am5.color(0xd4f1f9),
+  fillOpacity: 0.1,
+  strokeOpacity: 0
+});
+backgroundSeries.data.push({
+  geometry: am5map.getGeoRectangle(90, 180, -90, -180)
+});
+
+var graticuleSeries = chart.series.unshift(
+  am5map.GraticuleSeries.new(root, {
+    step: 10
+  })
+);
+
+graticuleSeries.mapLines.template.set("strokeOpacity", 0.1)
+
+var previousPolygon;
+// polygonSeries.mapPolygons.template.on("active", function(active, target) {
+//   if (previousPolygon && previousPolygon != target) {
+//     previousPolygon.set("active", false);
+//   }
+//   if (target.get("active")) {
+//     selectCountry(target.dataItem.get("id"));
+//     setTimeout(function(){
+//     polygonSeries.zoomToDataItem(target.dataItem );
+
+//     },2000)
+//   }
+//   previousPolygon = target;
+// });
+
+function selectCountry(id) {
+    chart.goHome()
+    var dataItem = polygonSeries.getDataItemById(id);
+    var target = dataItem.get("mapPolygon");
+    if (target) {
+        var centroid = target.geoCentroid();
+        if (centroid) {
+            
+        chart.animate({ key: "rotationX", to: -centroid.longitude, duration: 1500, easing: am5.ease.inOut(am5.ease.cubic) });
+        chart.animate({ key: "rotationY", to: -centroid.latitude, duration: 1500, easing: am5.ease.inOut(am5.ease.cubic) });
+        setTimeout(function(){
+            polygonSeries.zoomToDataItem(dataItem );
+
+        },2000)
+        }
+    }
+}
+
+//  polygonSeries.events.on("datavalidated", function() {
+    
+//    setTimeout(function(){
+//     selectCountry("GB") 
+//    },1000)
+   
+   
+//  });
+
+chart.appear(1000, 100);
+resolve({
+    selectCountry: selectCountry
+})
+})
+}); 
+
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+        createChart().then(chartActions => {
+
+       
+         
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.refresh()
+    const tl = gsap.timeline({repeatDelay:5});
+    const duration = 50; 
+    const delayBetweenSections = 10; 
+
+    tl.to('section.panel.first', {opacity: 0, duration: duration, ease: "Linear.easeNone"})
+      .fromTo('section.panel.blue', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`)
+      .addLabel("startProblems", `+=${delayBetweenSections}`)
+      .to("#problem1", {x: 0, duration: duration, ease: "none"}, "startProblems")
+      .to("#problem2", {x: 0, duration: duration, ease: "none"}, "startProblems+=30") 
+      .to("#problem3", {x: 0, duration: duration, ease: "none"}, "startProblems+=60") 
+
+      .fromTo('section.panel.turqoise', {opacity: 0}, {opacity: 1, duration: duration, ease: "slow"}, `+=${delayBetweenSections}`)
+      .fromTo('section.panel.green', {opacity: 0}, {opacity: 1, duration: duration, ease: "slow"}, `+=${delayBetweenSections}`)
+      .addLabel("startProblems", `+=${delayBetweenSections}`)
+      .to(".button", {"z-index": 20, duration: duration, ease: "none"})
+      .to(".button", {"z-index": 0, duration: duration, ease: "none"})
+      .fromTo('section.panel.bordeaux', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`)
+      .addLabel("startOverlords", `+=${delayBetweenSections}`)
+      .call(() => chartActions.selectCountry("GB"), [], "startOverlords")
+      .to("#overlord1", {x: 0, duration: duration, ease: "slow"}, "startOverlords")
+      .to("#overlord2", {x: 0, duration: duration, ease: "slow"}, "startOverlords+=30") 
+      .to("#overlord3", {x: 0, duration: duration, ease: "slow"}, "startOverlords+=60")
+      .to(["#overlord1", "#overlord2", "#overlord3"], {x: "200%", duration: duration, ease: "slow"}, "startOverlords+=150")
+      .call(() => chartActions.selectCountry("BD"), [], "startOverlords+=160")
+      .fromTo("#bangla1", {x: "100%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=180")
+      .fromTo("#bangla2", {x: "100%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=210")
+      .fromTo("#bangla3", {x: "100%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=240")
+      .fromTo('section.panel.final', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`);
+      
+
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: '#pinContainer',
+        start: "top top",
+        end: "+=1000%",
+        pin: true,
+        scrub: 1,
+        toggleActions : "restart pause reverse pause"
+    });
+    
+   
+});
+})
+    </script>
+
+
+    
+    <style>
+     body{
+  background: rgb(30,32,34);
+  color: white;
+
+}
+.problemDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    flex-direction: column;
+    width: 100%;
+}
+.problem{
+    transform: translateX(200%);
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+h1{
+    margin-top: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.btn{
+    color: black;
+    background-color: rgb(211,211,211);
+    border-color: rgb(30,32,34);
+    margin: 50px;
+    font-family: 'Playfair Display', serif;
+  transition: all 0.3s ease;
+  width: 100%;
+  left:-25%;
+  position: relative;
+  z-index: 20;
+
+}
+  .btn:active{
+    outline-color: black !important;
+  }
+  .btn:hover{
+    background-color: rgb(173,216,230);
+    transform: translateY(-3px);
+  box-shadow: 0 0 5px rgb(173,216,230), 0 0 7px rgb(173,216,230), 0 0 10px rgb(173,216,230);
+  }
+h1,h2,h3,h4,h5,h6,p{
+    font-family: 'Playfair Display', serif;
+}
+.homeComponent{
+  background-image: url("../../assets/openingpage.png");
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  filter: grayscale(20%);
+
+}
+
+#pinContainer {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.panel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgb(30,32,34);
+background: linear-gradient( rgba(30,32,34,1) rgba(46,46,46,1) 94%);
+}
+
+.imageHolder {
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  margin-top: 5%;
+  height: 100%;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-left: 40px;
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+#imageHolder2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.realImageHolder{
+    border-radius:25px;
+    margin-top: 5%;
+}
+.first img{
+  width: 90%;
+  height: 50%;
+
+}
+.container-fluid, .container{
+  height: inherit;
+}
+.panel_rows{
+  height: inherit;
+}
+.first_row{
+  height: 15%;
+}
+.second_row{
+  height: 40%;
+  align-items: center;
+}
+.third_row{
+  height: 30%;
+  border-top: 2px groove white;
+  border-image: linear-gradient(to right, white 50%, transparent 50%);
+border-image-slice: 1;
+  margin-top: -50px;
+  padding-top: 40px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  
+}
+.histo{
+  height: 70%;
+}
+.text-centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color:white;;
+  flex-direction: column;
+}
+.text-centering4{
+  height: 15%;
+  padding-top: 10px;
+  }
+.main{
+  height: inherit;
+  width: 100%;
+}
+.text-centerz {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  text-align: left;
+  margin-left: 60px;
+  width: 150%;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+
+.headers{
+  height:80vh
+}
+
+   
+    #img{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        height: 250px;
+        width: auto;
+    }
+    #obj{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: aliceblue;
+    }
+    #obj2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: black;
+    }
+    
+    .header{
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+    .first h1{
+        font-size: 7rem;
+        text-transform: uppercase;
+        font-family: "Bebas Neue";
+        font-kerning: none;
+        clip-path: polygon(0 0 , 100% 0 , 100% 100% , 0% 100% );
+        line-height: 5.9rem;
+
+    }
+    .container-fluid{
+        height: inherit;
+    }
+    .first{
+        height: 100vh;
+    }
+    .char{
+        transform: translateY(115px);
+        transition: transform .5s;
+    }
+    .imageContainer{
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        width: 50%;
+
+    }
+    .panel p{
+        font-size: 20px;
+    }
+    .button{
+        cursor: pointer;
+        transition: z-index 1s ease-out;
+        z-index: 0;
+        position: relative;
+    }
+    #chartdiv,#peopleText{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    #imageHolder4{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: inherit;
+        width: 100%;
+        padding-top: 10px;
+        margin-top: 10px;
+        position: relative;
+    }
+    .individuals, .person{
+        position: absolute;
+        top:0;
+        left:50%;
+        width: auto;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 25%;
+        flex: 1 0 calc(25% - 20px);
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #overlord1, #bangla1 { top: 0%; }
+    #overlord2, #bangla2 { top: 25%; } 
+    #overlord3, #bangla3 { top: 50%; }
+    #overlord1,#overlord2,#overlord3,#bangla1,#bangla2,#bangla3{
+        display: flex;
+        margin:5px 0;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        height: 25%;
+        margin:20px;
+        transform: translateX(200%);
+        
+    }
+    .content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        max-height: 100%;
+    }
+    .team-member-photo{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+    }
+    
+    .team-member-photo, .text {
+    width: 100%;
+    padding-left:15px;
+    font-size: 12px;
+    }
+    .content p {
+        font-size: 12px;
+    }
+    .content h4{
+        font-size: 15px;
+    }
+    .image{
+        width: 150px;
+        border-radius: 50%;
+        height: inherit;
+    }
+    #content{
+        display: flex;
+        flex-direction: column;
+    }
+    .person{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: hidden;
+    }
+        </style>
+ 
+ <script src="https://unpkg.com/split-type"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const myText = new SplitType('#my-text', {
+        types: 'chars', 
+    });
+
+    gsap.to(myText.chars,{
+        y:0,
+        stagger: 0.05,
+        delay: 0.2,
+        duration:0.2,
+        ease:"back.out"
+    })
+    
+})
+</script>
+<body id="Grant">
+  
+<div id="pinContainer">
+    <section class="panel first">
+        <div class="container-fluid">
+            <div class="row panel_rows">
+                <div class="col-12">
+                    <header class="header">
+                        <h1 id="my-text">TRINITY CHALLENGE</h1>
+                        <div class="imageContainer">
+                            <img src="/assets/img/grants/trinity_logo.png">
+                        </div>                     </header>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+	<section class="panel blue">
+		<div class="container-fluid">
+      <div class="row panel_rows">
+        <div class="col-6 text-centering">
+          <h1>The burden of antimicrobial resistance in Bangladesh</h1>
+          <p> There are multiple problems currently facing Bangladesh regarding AMR diseases </p>
+        </div>
+        <div class="col-6 " >
+        <div class="problemDiv">
+
+        
+          <div class="problem" id="problem1">
+            <p>4.95 million people who died in 2019 suffered from drug-resistant infections</p>
+          </div>
+          <div class="problem" id="problem2">
+            <p>AMR directly caused 1.27 million of those deaths</p>
+          </div>
+          <div class="problem" id="problem3">
+            <p>1 in 5 of those deaths occured among children under 5 years old</p>
+          </div>
+        </div>   
+        </div>
+      </div>
+    </div>
+	</section>
+	<section class="panel turqoise">
+		<div class="container-fluid">
+      <div class="row panel_rows histo">
+        <div class="col-12 imageHolders" id="imageHolder2">
+          <div class="imageHolder" id="imageHolder" >
+            <img class="realImageHolder"src="/assets/img/grants/deaths.JPG">
+          </div>
+        </div>
+        <div class="col-12 text-centering">
+          <h1>AMR Deaths</h1>
+          <p> The number of AMR deaths in Bangladesh is higher than deahts from chronic respiratory diseases, respiratory infections and tuberculosis </p>
+          
+        </div>
+      </div>
+    </div>
+	</section>
+	<section class="panel green">
+		<div class="container-fluid">
+      <div class="row panel_rows">
+        <div class="col-6 text-centering triggerIT">
+          <h1>Our solution</h1>
+          
+          <div class="button">
+            <a href="/assets/img/grants/ourplan.pdf" type="button" download="Our Plan"class="btn btn-primary"  >Download our solution</a>
+          </div>
+        </div>
+        <div class="col-6 imageHolders"id="imageHolder3">
+          <div class="imageHolder" [style.background-image]="'url(assets/scatter.png)'"></div>
+        </div>
+      </div>
+    </div>
+	</section>
+	<section class="panel bordeaux">
+		<div class="container-fluid">
+      <div class="row panel_rows">
+        <div class="col-12 text-centering text-centering4">
+          <h1>The team</h1>
+          <p>Meet the team that will be behind the work</p>
+        </div>
+        <div class="col-12 imageHolders"id="imageHolder4">
+            <div id="chartdiv"></div>
+            <div id="peopleText">
+                            
+                {% for person in site.people %}
+                {% if person.Leader == true %}
+                {% assign overlords = overlords | plus: 1 %}
+                <div id="overlord{{overlords}}" class="individuals animated-element">
+                    <div class="content">
+                        <div  class="team-member-photo" id="content" >
+                            <img class="image" src="/assets/img/{{person.pid}}.jpg"> 
+                            <h4>{{ person.forname | capitalize }} {{ person.surname | capitalize }} </h4> 
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="text" id="content">
+                            
+                            <p>{{ person.excerpt }}</p>
+    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                {% endif %}
+                {% endfor %}
+                
+                    <div class="person" id="bangla1">
+                    <div class="content">
+                        <div  class="team-member-photo" id="content" >
+                            <img class="image" src="/assets/img/grants/dinesh_modal.jpg"> 
+                            <h4>Dinesh Mondal </h4> 
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="text" id="content">
+                            <p>
+                                Dr. Dinesh Mondal is a Senior Scientist in the Nutrition Infection Interaction research unit, Nutrition and Clinical Services Division of the International Centre for Diarrhoeal Disease Research, Bangladesh (icddr,b). He graduated in Medicine in the Higher Medical Institute, Sofia Medical Academy, Bulgaria. Subsequently he obtained MD (Pediatrics) and PhD (Pediatric Gastroenterology) in the Institute of Pediatrics, Sofia Medical Academy, Bulgaria. He started his scientific career in the field of enteric infections and nutrition.
+                                </p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="person" id="bangla2">
+                    <div class="content">
+                        <div  class="team-member-photo" id="content" >
+                            <img class="image" src="/assets/img/grants/faria_hossain.jpg"> 
+                            <h4>Fariah Hossain</h4> 
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="text" id="content">
+                        <p> About me
+                        </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="person" id="bangla3">
+                    <div class="content">
+                        <div  class="team-member-photo" id="content" >
+                            <img class="image" src="/assets/img/grants/Mustafizur_Rahman.jpg"> 
+                            <h4>Mustafizur Rahman</h4> 
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="text" id="content">
+                        <p> About me
+                        </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  <section class="panel final">
+		<div class="container-fluid">
+      <div class="row panel_rows">
+        <div class="col-6 text-centering">
+          <h1>Expressed Pathways</h1>
+          <p> Pathways table, to compare differentially expresssed genes between lineages and the pathways that are associated with the genes </p>
+         
+        </div>
+        <div class="col-6 imageHolders" id="imageHolder5">
+          <div class="imageHolder"[style.background-image]="'url(assets/pathways.png)'"></div>
+        </div>
+
+      </div>
+    </div>
+	</section>
+</div>
+
+    <div class="chart_and_text">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                   
+                     
+                    
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+</section>
