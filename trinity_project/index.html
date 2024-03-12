@@ -18,6 +18,7 @@ title: Trinity Project
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </links>
 
     <meta charset="utf-8">
@@ -78,39 +79,39 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
 var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
   geoJSON: am5geodata_worldLow 
 }));
-
 polygonSeries.mapPolygons.template.setAll({
   tooltipText: "{name}",
-  toggleKey: "active",
-  interactive: true
+  templateField: "polygonSettings"
 });
 
-polygonSeries.mapPolygons.template.states.create("hover", {
-  fill: root.interfaceColors.get("primaryButtonHover")
+polygonSeries.data.setAll([{
+  id: "GB",
+  polygonSettings: {
+    fill: am5.color("#b5181f") 
+  }
+}, {
+  id: "BD",
+  polygonSettings: {
+    fill: am5.color("#006a4e")
+    }}]);
+
+polygonSeries.mapPolygons.template.setAll({
+  fill: "#add8e6",
+  stroke: "#1e2022"
 });
 
-polygonSeries.mapPolygons.template.states.create("active", {
-  fill: root.interfaceColors.get("primaryButtonHover")
-});
 
 
 var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
 backgroundSeries.mapPolygons.template.setAll({
-  fill: am5.color(0xd4f1f9),
-  fillOpacity: 0.1,
+  fill: am5.color("#1e2022"),
+  fillOpacity: 0.4,
   strokeOpacity: 0
 });
 backgroundSeries.data.push({
   geometry: am5map.getGeoRectangle(90, 180, -90, -180)
 });
 
-var graticuleSeries = chart.series.unshift(
-  am5map.GraticuleSeries.new(root, {
-    step: 10
-  })
-);
-
-graticuleSeries.mapLines.template.set("strokeOpacity", 0.1)
 
 var previousPolygon;
 // polygonSeries.mapPolygons.template.on("active", function(active, target) {
@@ -128,12 +129,8 @@ var previousPolygon;
 // });
 currID = "BD"
 function selectCountry(id) {
-  
     
-    if (currID == id & currID != "BD"){
-      console.log("already on it")
-    }else if (currID == "BD" & currID == id){
-
+    if (currID == "BD" & currID == id){
       chart.goHome()
     var dataItem = polygonSeries.getDataItemById("GB");
     var target = dataItem.get("mapPolygon");
@@ -149,7 +146,10 @@ function selectCountry(id) {
         },2000)
         }
     }
-   
+    currID = "GB"
+  }else if(currID =="GB" & id == "GB"){
+      console.log("dont do it")
+    
     }else{
       chart.goHome()
     var dataItem = polygonSeries.getDataItemById(id);
@@ -168,7 +168,7 @@ function selectCountry(id) {
     }
     currID = id
     }
-   
+
 }
 
 //  polygonSeries.events.on("datavalidated", function() {
@@ -179,6 +179,7 @@ function selectCountry(id) {
    
    
 //  });
+
 
 chart.appear(1000, 100);
 resolve({
@@ -292,11 +293,18 @@ h1{
     color: black;
     background-color: rgb(211,211,211);
     border-color: rgb(30,32,34);
-    margin: 50px;
-    font-family: 'Playfair Display', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   transition: all 0.3s ease;
   width: 100%;
-  left:-25%;
+  padding: 20px;
+  margin-top: 30px;
+  
   position: relative;
   z-index: 20;
 
@@ -309,8 +317,14 @@ h1{
     transform: translateY(-3px);
   box-shadow: 0 0 5px rgb(173,216,230), 0 0 7px rgb(173,216,230), 0 0 10px rgb(173,216,230);
   }
-h1,h2,h3,h4,h5,h6,p{
-    font-family: 'Playfair Display', serif;
+h2,h3,h4,h5,h6,p{
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+h1{
+  font-family: "Bebas Neue";
 }
 .homeComponent{
   background-image: url("../../assets/openingpage.png");
@@ -371,6 +385,7 @@ background: linear-gradient( rgba(30,32,34,1) rgba(46,46,46,1) 94%);
 }
 .panel_rows{
   height: inherit;
+display: flex;
 }
 .first_row{
   height: 15%;
@@ -464,13 +479,12 @@ border-image-slice: 1;
         text-align: center;
         
     }
-    .first h1{
-        font-size: 7rem;
+    .trinityLogoText h5{
+        font-size: 3vh;
         text-transform: uppercase;
-        font-family: "Bebas Neue";
+        font-family: 'Playfair Display', serif;
         font-kerning: none;
         clip-path: polygon(0 0 , 100% 0 , 100% 100% , 0% 100% );
-        line-height: 5.9rem;
 
     }
     .container-fluid{
@@ -487,8 +501,8 @@ border-image-slice: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100%;
+        width: 60%;
+        height: 60%;
 
     }
     .panel p{
@@ -506,15 +520,16 @@ border-image-slice: 1;
         display: flex;
         flex-direction: column;
     }
+    
     #imageHolder4{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        height: inherit;
+       
+        height: 85%;
         width: 100%;
         padding-top: 10px;
         margin-top: 10px;
         position: relative;
+        overflow: hidden;
+
     }
     .individuals, .person{
         position: absolute;
@@ -637,7 +652,7 @@ border-image-slice: 1;
       
     }
     #box1{
-      background-color: rgb(182,221,203);
+      background-color: rgb(212,78,103);
     }
     #box2{
       background-color: rgb(181, 24, 31);
@@ -728,7 +743,7 @@ border-image-slice: 1;
  }
  .container .card h2 {
   font-family: "Bebas Neue";
-	 
+	 z-index: 99999;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -741,15 +756,16 @@ border-image-slice: 1;
 	 color: black;
 }
  .container .card .fa-arrow-right {
-	 z-index: 9999;
+	 z-index: 99999;
 	 position: absolute;
 	 right: 75px;
 	 bottom: 25px;
 	 font-size: 70px;
 	 cursor: pointer;
+   
 }
  .container .card p {
-	 z-index: 999999;
+	 z-index: 999999999;
 	 position: absolute;
 	 top: 20px;
 	 right: 70px;
@@ -775,13 +791,14 @@ border-image-slice: 1;
 	 opacity: 1;
 	 -webkit-transform: scale(1);
 	 transform: scale(1);
+   z-index: 99999;
 }
  .container .card .buttonz {
   position: absolute;
     right: 14px;
     bottom: 14px;
-    width: 100px; /* Adjusted to provide a larger clickable area */
-    height: 50px; /* Adjusted height for better visibility and accessibility */
+    width: 100px; 
+    height: 50px; 
     background-color: rgb(173,216,230);
     border: none;
     border-radius: 30px;
@@ -789,15 +806,16 @@ border-image-slice: 1;
     outline: none;
     transition: all 0.3s ease;
     mix-blend-mode: hard-light;
-    display: flex; /* Added for centering content */
-    align-items: center; /* Vertical centering */
+    display: flex; 
+    align-items: center; 
     justify-content: center;
 }
  .container .card .buttonz i {
 	 font-size: 3rem;
 }
  .container .card:hover .buttonz {
-	 transform: scale(7.5,8.5);
+	 transform: scale(7.5,13.5);
+   z-index: 9999;
    transition: transform 0.5s ease;
 }
  .container .card:hover p {
@@ -826,10 +844,14 @@ border-image-slice: 1;
   right:100px;
   pointer-events: none;
   }
-  .firstCol6{
-    background-color: white;
-    color: black;
-  }
+  .trinityLogoText{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: left;
+    position: absolute;
+    transform: translateX(-12%) translateY(4%);
+      }
     </style>
  
  <script src="https://unpkg.com/split-type"></script>
@@ -856,17 +878,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="panel first">
         <div class="container-fluid">
             <div class="row panel_rows">
-                <div class="col-xl-6 firstCol6">
-                    
-                  <header class="header">
-                    <h1 id="my-text">TRINITY CHALLENGE</h1>
-                        </header>
-                </div>
-                <div class="col-xl-6 secondCol6">
+              
+                <div class="col-xl-12 secondCol6">
                   <header class="header">
                    
                     <div class="imageContainer">
-                        <img src="/assets/img/grants/trinity_logo.png">
+                        <div class="trinityLogoText">
+                          <h5 id="my-text" >THE <br>
+                            TRINITY
+                            <br>
+                            CHALLENGE
+                            </h5>
+                        </div>
+                        <img src="/assets/img/grants/trinity_logo_just_outside.png">
                     </div>                     </header>
                 </div>
             </div>
@@ -918,7 +942,6 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="row panel_rows">
         <div class="col-6 text-centering triggerIT">
           <h1>Our solution</h1>
-          
           <div class="button">
             <a href="/assets/img/grants/ourplan.pdf" type="button" download="Our Plan"class="btn btn-primary"  >Download our solution</a>
           </div>
