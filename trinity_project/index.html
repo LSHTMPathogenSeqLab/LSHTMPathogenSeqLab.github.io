@@ -30,6 +30,7 @@ title: Trinity Project
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
@@ -132,6 +133,7 @@ function selectCountry(id) {
     
     if (currID == "BD" & currID == id){
       chart.goHome()
+      console.log(currID,"  ",id)
     var dataItem = polygonSeries.getDataItemById("GB");
     var target = dataItem.get("mapPolygon");
       if (target) {
@@ -147,11 +149,10 @@ function selectCountry(id) {
         }
     }
     currID = "GB"
-  }else if(currID =="GB" & id == "GB"){
-      console.log("dont do it")
-    
-    }else{
+  
+  }  else{
       chart.goHome()
+      console.log(currID,"  ",id)
     var dataItem = polygonSeries.getDataItemById(id);
     var target = dataItem.get("mapPolygon");
       if (target) {
@@ -191,66 +192,63 @@ resolve({
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  function playBoxAnimations() {
-    const boxTl = gsap.timeline();
-    boxTl
-        .to("#box1", {y: -200, x: -200, duration: 1, ease: "power4.in"})
-        .to("#box2", {y: -200, x: 200, duration: 1, ease: "power4.in"}, "<")
-        .to("#box3", {y: 320, x: -200, duration: 1, ease: "power4.in"}, "<")
-        .to("#box4", {y: 320, x: 200, duration: 1, ease: "power4.in"}, "<");
-}
-        createChart().then(chartActions => {
+document.addEventListener('DOMContentLoaded', function() {
+    function playBoxAnimations() {
+        const boxTl = gsap.timeline();
+        boxTl
+            .to("#box1", { y: -200, x: -200, duration: 1, ease: "power4.in" })
+            .to("#box2", { y: -200, x: 200, duration: 1, ease: "power4.in" }, "<")
+            .to("#box3", { y: 320, x: -200, duration: 1, ease: "power4.in" }, "<")
+            .to("#box4", { y: 320, x: 200, duration: 1, ease: "power4.in" }, "<");
+    }
 
-       
-         
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.refresh()
-    const tl = gsap.timeline({repeatDelay:5});
-    const duration = 50; 
-    const delayBetweenSections = 50; 
+    gsap.registerPlugin(ScrollTrigger, CustomEase);
 
-    tl.to('section.panel.first', {opacity: 0, duration: duration, ease: "Linear.easeNone"})
-      .fromTo('section.panel.blue', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`)
-      .addLabel("startProblems", `+=${delayBetweenSections}`)
-      .to("#problem1", {x: 0, duration: duration, ease: "none"}, "startProblems")
-      .to("#problem2", {x: 0, duration: duration, ease: "none"}, "startProblems+=30") 
-      .to("#problem3", {x: 0, duration: duration, ease: "none"}, "startProblems+=60") 
-      .to(".button", {"z-index": 20, duration: duration, ease: "none"})
-      .fromTo('section.panel.turqoise', {opacity: 0}, {opacity: 1, duration: 100, ease: "slow"}, `+=${delayBetweenSections}`)
-      .fromTo('section.panel.green', {opacity: 0}, {opacity: 1, duration: duration, ease: "slow"}, `+=${delayBetweenSections}`)
-      .call(playBoxAnimations, [], "box")
-      .addLabel("startButton")
-      
-      .to(".button", {"z-index": 0, duration: duration, ease: "none"})
-      
-      .fromTo('section.panel.bordeaux', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`)
-      .addLabel("startOverlords", `+=${delayBetweenSections}`)
-      .call(() => chartActions.selectCountry("GB"), [], "startOverlords")
-      .to("#overlord1", {x: 0, duration: duration, ease: "slow"}, "startOverlords")
-      .to("#overlord2", {x: 0, duration: duration, ease: "slow"}, "startOverlords+=30") 
-      .to("#overlord3", {x: 0, duration: duration, ease: "slow"}, "startOverlords+=60")
-      .to(["#overlord1", "#overlord2", "#overlord3"], {x: "200%", duration: 100, ease: "slow"}, "startOverlords+=150")
-      .call(() => chartActions.selectCountry("BD"), [], "startOverlords+=160")
-      .fromTo("#bangla1", {x: "500%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=180")
-      .fromTo("#bangla2", {x: "500%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=210")
-      .fromTo("#bangla3", {x: "500%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=240")
-      .fromTo('section.panel.final', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`)
-      .to(".buttonz a", {"pointer-events": "auto", duration: duration, ease: "none"})
-      .to(".buttonz", {"cursor": "pointer", duration: duration, ease: "none"})
-    ScrollTrigger.create({
-        animation: tl,
-        trigger: '#pinContainer',
-        start: "top top",
-        end: "+=1000%",
-        pin: true,
-        scrub: 1,
-        toggleActions : "restart pause reverse pause"
+    createChart().then(chartActions => {
+        const duration = 50;
+        const delayBetweenSections = 50;
+
+        const tl = gsap.timeline({ repeatDelay: 5 })
+            .to('section.panel.first', { opacity: 0, duration: duration, ease: "Linear.easeNone" })
+            .fromTo('section.panel.blue', { opacity: 0 }, { opacity: 1, duration: duration, ease: "Linear.easeNone" }, `+=${delayBetweenSections}`)
+            .addLabel("startProblems", `+=${delayBetweenSections}`)
+            .to("#problem1", { x: 0, duration: duration, ease: "none" }, "startProblems")
+            .to("#problem2", { x: 0, duration: duration, ease: "none" }, "startProblems+=30")
+            .to("#problem3", { x: 0, duration: duration, ease: "none" }, "startProblems+=60")
+            .to(".button", { "z-index": 20, duration: duration, ease: "none" })
+            .fromTo('section.panel.turqoise', { opacity: 0 }, { opacity: 1, duration: 100, ease: "slow" }, `+=${delayBetweenSections}`)
+            .fromTo('section.panel.green', { opacity: 0 }, { opacity: 1, duration: duration, ease: "slow" }, `+=${delayBetweenSections}`)
+            .call(playBoxAnimations, [], "box")
+            .addLabel("startButton")
+            .to(".button", { "z-index": 20, duration: duration, ease: "none" })
+            .fromTo('section.panel.bordeaux', { opacity: 0 }, { opacity: 1, duration: duration, ease: "Linear.easeNone" }, `+=${delayBetweenSections}`)
+            .to(".button", { "z-index": 0, "opacity": 0, duration: 1, ease: CustomEase.create("custom", "M0,0 C0,0.408 0.046,0.948 0.1,1 0.15,1.051 0.584,1 1,1 "), y: -500 })
+            .addLabel("startOverlords", `+=${delayBetweenSections}`)
+            .call(() => chartActions.selectCountry("GB"), [], "startOverlords")
+            .to("#overlord1", { x: 0, duration: duration, ease: "slow" }, "startOverlords")
+            .to("#overlord2", { x: 0, duration: duration, ease: "slow" }, "startOverlords+=30")
+            .to("#overlord3", { x: 0, duration: duration, ease: "slow" }, "startOverlords+=60")
+            .to(["#overlord1", "#overlord2", "#overlord3"], { x: "200%", duration: 100, ease: "slow" }, "startOverlords+=150")
+            .call(() => chartActions.selectCountry("BD"), [], "startOverlords+=160")
+            .fromTo("#bangla1", {x: "500%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=180")
+            .fromTo("#bangla2", {x: "500%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=210")
+            .fromTo("#bangla3", {x: "500%"}, {x: "0%", duration: duration, ease: "power1.out"}, "startOverlords+=240")
+            .fromTo('section.panel.final', {opacity: 0}, {opacity: 1, duration: duration, ease: "Linear.easeNone"}, `+=${delayBetweenSections}`)
+            .to(".buttonz a", {"pointer-events": "auto", duration: duration, ease: "none"})
+            .to(".buttonz", {"cursor": "pointer", duration: duration, ease: "none"});
+
+            ScrollTrigger.create({
+            animation: tl,
+            trigger: '#pinContainer',
+            start: "top top",
+            end: "+=1000%",
+            pin: true,
+            scrub: 1,
+            toggleActions: "restart pause reverse pause"
+        });
     });
-    
-   
 });
-})
+
     </script>
 
 
@@ -261,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
   color: white;
 
 }
+
 
 .problemDiv{
     display: flex;
@@ -480,7 +479,7 @@ border-image-slice: 1;
         
     }
     .trinityLogoText h5{
-        font-size: 3vh;
+        font-size: 25px;
         text-transform: uppercase;
         font-family: 'Playfair Display', serif;
         font-kerning: none;
@@ -501,8 +500,8 @@ border-image-slice: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 60%;
-        height: 60%;
+        width: 1200px;
+        height: auto;
 
     }
     .panel p{
@@ -852,6 +851,11 @@ border-image-slice: 1;
     position: absolute;
     transform: translateX(-12%) translateY(4%);
       }
+      @media screen and (max-width:480px) {
+  .trinityLogoText h5{
+    font-size: 12px;
+  }
+}
     </style>
  
  <script src="https://unpkg.com/split-type"></script>
