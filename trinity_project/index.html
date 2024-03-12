@@ -860,7 +860,7 @@ border-image-slice: 1;
   }
   @media screen and (max-width:480px) {
   .trinityLogoText h5{
-    font-size: 20px;
+    font-size: 25px;
   }
   .trinityLogoText{
     transform: translateX(-12%) translateY(4%);
@@ -870,14 +870,17 @@ border-image-slice: 1;
     width: 100%;
   }
   .imageLogo{
-    height: inherit;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     
   }
   .imageLogo img{
-    height: 50%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: auto;
   }
   .problem{
@@ -916,9 +919,19 @@ border-image-slice: 1;
   .desktop{
     display: none;
   }
+  .boxMobile h1, p{
+    padding: 0;
+    margin: 0;
+  }
+  .boxMobile h1{
+    font-size: 18px;
+  }
+  .boxMobile p{
+    font-size: 15px;
+  }
   .boxMobile{
     width: 100%;
-    height: auto;
+    height: 100%;
     overflow: none;
     align-items: center;
     display: flex;
@@ -1041,7 +1054,7 @@ document.addEventListener('DOMContentLoaded', function() {
             screenHeight.replace("px","")
             screenHeight = parseInt(screenHeight)
             var holderHeight = screenHeight / mobileImageHolders.length; 
-            
+            holderHeight = holderHeight - 20
             mobileImageHolders.forEach(function(holder) {
                 holder.style.height = holderHeight + 'px';
             });
