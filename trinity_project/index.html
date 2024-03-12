@@ -193,15 +193,41 @@ resolve({
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    function playBoxAnimations() {
-        const boxTl = gsap.timeline();
-        boxTl
-            .to("#box1", { y: -200, x: -200, duration: 1, ease: "power4.in" })
-            .to("#box2", { y: -200, x: 200, duration: 1, ease: "power4.in" }, "<")
-            .to("#box3", { y: 320, x: -200, duration: 1, ease: "power4.in" }, "<")
-            .to("#box4", { y: 320, x: 200, duration: 1, ease: "power4.in" }, "<");
-    }
+  window.addEventListener('resize', adjustBoxSize);
+  function playBoxAnimations() {
+    const screenWidth = window.innerWidth;
+    const moveDistanceX = screenWidth * 0.15; 
+    const moveDistanceY = screenWidth * 0.11; 
 
+    const boxTl = gsap.timeline();
+    boxTl
+        .to("#box1", { y: -moveDistanceY, x: -moveDistanceX, duration: 1, ease: "power4.in" })
+        .to("#box2", { y: -moveDistanceY, x: moveDistanceX, duration: 1, ease: "power4.in" }, "<")
+        .to("#box3", { y: moveDistanceY * 1.6, x: -moveDistanceX, duration: 1, ease: "power4.in" }, "<")
+        .to("#box4", { y: moveDistanceY * 1.6, x: moveDistanceX, duration: 1, ease: "power4.in" }, "<");
+}
+function adjustBoxSize() {
+    const boxes = document.querySelectorAll('.box');
+    const screenHeight = window.innerHeight;
+    const screenWidth = window.innerWidth;
+    
+    boxes.forEach(box => {
+        box.style.width = `${screenWidth * 0.2}px`; 
+        box.style.height = `${screenHeight * 0.2}px`; 
+        box.style.padding = `${screenWidth * 0.01}px`; 
+        box.style.borderRadius = `${screenWidth * 0.01}px`;
+        const h1 = box.querySelector('h1');
+        const p = box.querySelector('p');
+        if(h1) h1.style.fontSize = '2vw'; 
+        if(p) p.style.fontSize = '1vw';
+    });
+    const otherBox = document.getElementById("box5")
+    otherBox.style.width = `${screenWidth * 0.4}px`; 
+    otherBox.style.height = `${screenHeight * 0.4}px`; 
+    otherBox.style.padding = `${screenWidth * 0.01}px`; 
+    otherBox.style.borderRadius = `${screenWidth * 0.01}px`; 
+}
+adjustBoxSize()
     gsap.registerPlugin(ScrollTrigger, CustomEase);
 
     createChart().then(chartActions => {
@@ -639,16 +665,15 @@ border-image-slice: 1;
       align-items: center;
       justify-content: center;
       position: absolute;
-      top:40%;
-      left:25%;
+      top:37%;
       object-fit: cover;
-      overflow: hidden;
+      overflow: none;
 
     }
     .boxImage img{
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
       
     }
     #box1, #mobileBox1{
