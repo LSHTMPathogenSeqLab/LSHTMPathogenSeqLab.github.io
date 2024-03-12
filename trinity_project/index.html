@@ -408,6 +408,7 @@ border-image-slice: 1;
 }
 .histo{
   height: 70%;
+  width: auto;
 }
 .text-centering {
   display: flex;
@@ -416,6 +417,7 @@ border-image-slice: 1;
   height: 100%;
   color:white;;
   flex-direction: column;
+  text-align: center;
 }
 .text-centering4{
   height: 15%;
@@ -479,7 +481,7 @@ border-image-slice: 1;
         
     }
     .trinityLogoText h5{
-        font-size: 25px;
+        font-size: 32px;
         text-transform: uppercase;
         font-family: 'Playfair Display', serif;
         font-kerning: none;
@@ -516,8 +518,7 @@ border-image-slice: 1;
     #chartdiv,#peopleText{
         width: 50%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
+        
     }
     
     #imageHolder4{
@@ -610,7 +611,7 @@ border-image-slice: 1;
       position: relative;
       display: flex;
     }
-    .boxHolder{
+    .boxHolder, .mobileBoxHolder{
       position: relative;
       height: 100%;
       width: 100%;
@@ -650,17 +651,17 @@ border-image-slice: 1;
       object-fit: cover;
       
     }
-    #box1{
+    #box1, #mobileBox1{
       background-color: rgb(212,78,103);
     }
-    #box2{
+    #box2 , #mobileBox2 {
       background-color: rgb(181, 24, 31);
     }
 
-    #box3{
+    #box3, #mobileBox3{
       background-color: rgb(39,58,88);
     }
-    #box4{
+    #box4, #mobileBox4{
       background-color: rgb(79,170,153);
 }
 
@@ -851,16 +852,206 @@ border-image-slice: 1;
     position: absolute;
     transform: translateX(-12%) translateY(4%);
       }
-      @media screen and (max-width:480px) {
-  .trinityLogoText h5{
-    font-size: 12px;
+  .mobile{
+    display: none;
   }
+  .desktop{
+    display: block;
+  }
+  @media screen and (max-width:480px) {
+  .trinityLogoText h5{
+    font-size: 20px;
+  }
+  .trinityLogoText{
+    transform: translateX(-12%) translateY(4%);
+  }
+  .imageContainer{
+    height: 100%;
+    width: 100%;
+  }
+  .imageLogo{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .imageLogo img{
+    height: 50%;
+    width: auto;
+  }
+  .problem{
+    width: 100%;
+    height: auto;
+  }
+  .problem p {
+    font-size: 15px;
+  }
+  .text-centering p{
+    font-size: 15px;
+  }
+  .text-centering-mobile{
+    margin-bottom: 5px;
+  }
+  #imageHolder2{
+    width: 100%;
+    height: auto;
+    margin-top: 20%;
+  }
+  .imageHolder{
+    width: 100%;
+
+  }
+  .realImageHolder{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .mobile{
+    display: block;
+  }
+  .desktop{
+    display: none;
+  }
+  .boxMobile{
+    width: 100%;
+    height: auto;
+    overflow: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .mobileBoxHolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+  .mobileImageHolders{
+    padding: 10px;
+    height: auto;
+    width: 85%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #peopleText{
+    width: 100%;
+    position: relative;
+  }
+  .image{
+        width: 100px;
+        border-radius: 50%;
+        height: auto;
+        margin: 10px;
+    }
+ 
+    .individuals, .person {
+  position: absolute;
+  top: 0;
+  left:0;
+  
+  width: auto;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  overflow: none;
+    }
+    #overlord1, #overlord2, #overlord3, #bangla1, #bangla2, #bangla3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  height: 25%;
+  transform: translateX(200%);
 }
+#content p{
+  font-size: 12px;
+}
+.initialHeader{
+  padding-top: 10px;
+}
+.card header{
+  right: 50px;
+}
+.container .card h2 {
+	 
+	 font-size: 40px;
+}
+.container .card .fa-arrow-right {
+	 right: 10px;
+	 font-size: 30px;
+	 cursor: pointer;
+   
+}
+
+.container .card .buttonz {
+    right: 10px;
+    width: 20px; 
+    height: 20px; 
+}
+ .container .card:hover .buttonz {
+	 transform: scale(13,22.5);
+   z-index: 9999;
+   transition: transform 0.5s ease;
+}
+.container .card p {
+	 right: 20px;
+}
+.container .card {
+	 width: 90%;
+	 height: 250px;
+}
+}
+
     </style>
  
  <script src="https://unpkg.com/split-type"></script>
 <script>
+  function adjustMobileBoxHolderHeight() {
+  var elementsAboveHeight = document.querySelector('.text-centering-mobile').offsetHeight; 
+  var mobileBoxHolder = document.querySelector('.mobileBoxHolder');
+  var remainingHeight = window.innerHeight - elementsAboveHeight;
+  remainingHeight = remainingHeight -20
+  mobileBoxHolder.style.height = remainingHeight + 'px';
+}
+
+window.addEventListener('resize', adjustMobileBoxHolderHeight);
 document.addEventListener('DOMContentLoaded', function() {
+  adjustMobileBoxHolderHeight();
+  function adjustMobileImageHoldersHeight() {
+        var mobileBoxHolder = document.querySelector('.mobileBoxHolder');
+        var mobileImageHolders = document.querySelectorAll('.mobileImageHolders');
+        if (mobileImageHolders.length > 0) {
+            var screenHeight = mobileBoxHolder.style.height
+            screenHeight.replace("px","")
+            screenHeight = parseInt(screenHeight)
+            var holderHeight = screenHeight / mobileImageHolders.length; 
+            
+            mobileImageHolders.forEach(function(holder) {
+                holder.style.height = holderHeight + 'px';
+            });
+        }
+    }
+
+    adjustMobileImageHoldersHeight();
+
+    window.addEventListener('resize', adjustMobileImageHoldersHeight);
+
     const myText = new SplitType('#my-text', {
         types: 'chars', 
     });
@@ -894,7 +1085,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             CHALLENGE
                             </h5>
                         </div>
-                        <img src="/assets/img/grants/trinity_logo_just_outside.png">
+                        <div class="imageLogo">
+                          <img src="/assets/img/grants/trinity_logo_just_outside.png">
+                        </div>
+                        
                     </div>                     </header>
                 </div>
             </div>
@@ -929,9 +1123,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		<div class="container-fluid">
       <div class="row panel_rows histo">
         <div class="col-12 imageHolders" id="imageHolder2">
-          <div class="imageHolder" id="imageHolder" >
+          
             <img class="realImageHolder"src="/assets/img/grants/deaths.JPG">
-          </div>
+          
         </div>
         <div class="col-12 text-centering">
           <h1>AMR Deaths</h1>
@@ -942,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 	</section>
 	<section class="panel green">
-		<div class="container-fluid">
+		<div class="container-fluid desktop">
       <div class="row panel_rows">
         <div class="col-6 text-centering triggerIT">
           <h1>Our solution</h1>
@@ -978,6 +1172,48 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
+    <div class="container-fluid mobile">
+      <div class="row panel_rows">
+        <div class="col-12 text-centering-mobile">
+          <h1>Our solution</h1>
+          <div class="button">
+            <a href="/assets/img/grants/ourplan.pdf" type="button" download="Our Plan"class="btn btn-primary"  >Download our solution</a>
+          </div>
+        </div>
+        <div class="mobileBoxHolder">
+        <div class="col-12 mobileImageHolders"id="mobileImageHolder3">
+          
+            <div class="boxMobile" id="mobileBox1">
+              <h1>Objective 1</h1>
+              <p>Collection of Clinical and Community Samples for AMR Surveillance
+              </p>
+            </div>
+          </div>
+          <div class="col-12 mobileImageHolders"id="mobileImageHolder3">
+            <div class="boxMobile" id="mobileBox2">
+              <h1>Objective 2</h1>
+              <p>Development and Deployment of Whole Genome Sequencing Analysis pipeline
+              </p>
+            </div>
+          </div>
+          <div class="col-12 mobileImageHolders"id="mobileImageHolder3">
+            <div class="boxMobile" id="mobileBox3">
+              <h1>Objective 3</h1>
+              <p>Implementation of GIS Dashboard for Real-Time AMR Tracking
+              </p>
+            </div>
+          </div>
+          <div class="col-12 mobileImageHolders"id="mobileImageHolder3">
+            <div class="boxMobile" id="mobileBox4">
+              <h1>Objective 4</h1>
+              <p>Capacity Building and Training in Bioinformatics and Data Analysis</p>
+            </div>
+          </div>
+          
+          </div>
+          </div>
+        </div>
+      
 	</section>
 	<section class="panel bordeaux">
 		<div class="container-fluid">
@@ -987,7 +1223,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <p>Meet the team that will be behind the work</p>
         </div>
         <div class="col-12 imageHolders"id="imageHolder4">
-            <div id="chartdiv"></div>
+            <div id="chartdiv" class="desktop"></div>
             <div id="peopleText">
                 <div id="overlord1" class="individuals animated-element">
                     <div class="content">
