@@ -129,6 +129,8 @@ var previousPolygon;
 //   previousPolygon = target;
 // });
 currID = "BD"
+console.log($(document).height())
+console.log($(document).width())
 function selectCountry(id) {
     
     if (currID == "BD" & currID == id){
@@ -622,6 +624,14 @@ border-image-slice: 1;
         border-radius: 50%;
         height: inherit;
     }
+    
+    @media screen and (max-height:850px) {
+  .image {
+    width: 100px;
+    height: auto;
+  }
+}
+   
     #content{
         display: flex;
         flex-direction: column;
