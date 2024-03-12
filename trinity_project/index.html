@@ -41,12 +41,7 @@ title: Trinity Project
  
 </head>
 
-
-
-<!-- Chart code -->
 <script>
-
-
 
 function createChart(){
     return new Promise((resolve, reject) => {
@@ -115,19 +110,7 @@ backgroundSeries.data.push({
 
 
 var previousPolygon;
-// polygonSeries.mapPolygons.template.on("active", function(active, target) {
-//   if (previousPolygon && previousPolygon != target) {
-//     previousPolygon.set("active", false);
-//   }
-//   if (target.get("active")) {
-//     selectCountry(target.dataItem.get("id"));
-//     setTimeout(function(){
-//     polygonSeries.zoomToDataItem(target.dataItem );
 
-//     },2000)
-//   }
-//   previousPolygon = target;
-// });
 currID = "BD"
 console.log($(document).height())
 console.log($(document).width())
@@ -174,14 +157,6 @@ function selectCountry(id) {
 
 }
 
-//  polygonSeries.events.on("datavalidated", function() {
-    
-//    setTimeout(function(){
-//     selectCountry("GB") 
-//    },1000)
-   
-   
-//  });
 
 
 chart.appear(1000, 100);
@@ -1070,37 +1045,9 @@ border-image-slice: 1;
  
  <script src="https://unpkg.com/split-type"></script>
 <script>
-  function adjustMobileBoxHolderHeight() {
-  var elementsAboveHeight = document.querySelector('.text-centering-mobile').offsetHeight; 
-  var mobileBoxHolder = document.querySelector('.mobileBoxHolder');
-  var remainingHeight = window.innerHeight - elementsAboveHeight;
-  remainingHeight = remainingHeight -20
-  mobileBoxHolder.style.height = remainingHeight + 'px';
-}
-
-window.addEventListener('resize', adjustMobileBoxHolderHeight);
+  
 document.addEventListener('DOMContentLoaded', function() {
-  adjustMobileBoxHolderHeight();
-  function adjustMobileImageHoldersHeight() {
-        var mobileBoxHolder = document.querySelector('.mobileBoxHolder');
-        var mobileImageHolders = document.querySelectorAll('.mobileImageHolders');
-        if (mobileImageHolders.length > 0) {
-            var screenHeight = mobileBoxHolder.style.height
-            screenHeight.replace("px","")
-            screenHeight = parseInt(screenHeight)
-            var holderHeight = screenHeight / mobileImageHolders.length; 
-            holderHeight = holderHeight - 20
-            mobileImageHolders.forEach(function(holder) {
-                holder.style.height = holderHeight + 'px';
-            });
-        }
-    }
-
-    adjustMobileImageHoldersHeight();
-
-    window.addEventListener('resize', adjustMobileImageHoldersHeight);
-
-    const myText = new SplitType('#my-text', {
+      const myText = new SplitType('#my-text', {
         types: 'chars', 
     });
   
@@ -1114,6 +1061,38 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     
 })
+
+function adjustMobileBoxHolderHeight() {
+  var elementsAboveHeight = document.querySelector('.text-centering-mobile') ? document.querySelector('.text-centering-mobile').offsetHeight : 0;
+  var mobileBoxHolder = document.querySelector('.mobileBoxHolder');
+  if (mobileBoxHolder) {
+    var remainingHeight = window.innerHeight - elementsAboveHeight;
+    remainingHeight = remainingHeight - 20; 
+    mobileBoxHolder.style.height = remainingHeight + 'px';
+  }
+}
+
+function adjustMobileImageHoldersHeight() {
+  var mobileBoxHolder = document.querySelector('.mobileBoxHolder');
+  var mobileImageHolders = document.querySelectorAll('.mobileImageHolders');
+  if (mobileBoxHolder && mobileImageHolders.length > 0) {
+    var screenHeight = mobileBoxHolder.offsetHeight;
+    var holderHeight = (screenHeight / mobileImageHolders.length) - 20;
+    mobileImageHolders.forEach(function(holder) {
+      holder.style.height = `${holderHeight}px`;
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  adjustMobileBoxHolderHeight();
+  adjustMobileImageHoldersHeight();
+});
+
+window.addEventListener('resize', function() {
+  adjustMobileBoxHolderHeight();
+  adjustMobileImageHoldersHeight();
+});
 </script>
 <body id="Grant">
   
