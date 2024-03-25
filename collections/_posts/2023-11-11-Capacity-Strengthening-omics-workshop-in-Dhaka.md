@@ -4,7 +4,8 @@ pid: workshopindhaka
 hidden: false
 author: jthorpe
 link: none
-brief:  Return to Bangladesh for a workshop in 'omics
+titleForBox: Capacity strengthening 'Omics workshop in Dhaka
+brief:  Return to Bangladesh for a workshop in 'Omics
 excerpt_separator: "<!--more-->"
 ---
 

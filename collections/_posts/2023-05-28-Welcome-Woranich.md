@@ -4,6 +4,7 @@ pid: whinthong
 hidden: false
 author: jthorpe
 link: none
+titleForBox: Welcome Woranich
 brief:  This week we welcome the newest member of our team, Dr. Woranich Hinthong. Woranich is joining us as a Postdoctoral Fellow, bringing an exceptional background in Tropical Medicine and Veterinary Sciences. 
 excerpt_separator: "<!--more-->"
 ---

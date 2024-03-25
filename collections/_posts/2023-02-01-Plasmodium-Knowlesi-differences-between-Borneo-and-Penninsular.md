@@ -5,6 +5,7 @@ title: "<em>Plasmodium knowlesi</em> differences between Borneo and Peninsula"
 date: 2023-02-01
 hidden: false
 author: tgclark
+titleForBox: <i>Plasmodium knowlesi </i> differences between Borneo and Peninsula 
 link: https://www.nature.com/articles/s41598-023-29368-4
 brief: <em>Plasmodium knowlesi</em> is a parasite that causes malaria in humans and other primates. It is found throughout Southeast Asia, and is the most common cause of human malaria in Malaysia. A published large-scale genomic analysis of <em>Plasmodium knowlesi</em> led by Anna et al. recently confirms that the parasite falls into three main sub-populations distinguished by a combination of geographical location (Borneo, Peninsula) and macaque host (<em>Macaca fascicularis</em> and <em>M. nemestrina</em>). The analysis reveals differences in Borneo clusters linked to mosquito-related stages of the parasite cycle, in contrast to differences in host-related stages for the Peninsula group. The work identifies new genetic exchange events, including introgressions between Malaysian Peninsula and <em>M. nemestrina</em>-associated clusters on various chromosomes.
 ---

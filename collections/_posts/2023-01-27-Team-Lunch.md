@@ -4,6 +4,7 @@ pid: wellbeing
 author: jthorpe
 link: none
 hidden: false
+titleForBox: Team lunch
 brief: COVID-19 has reinforced the importance of staff and personal wellbeing. Laboratory staff work predominantly onsite, and due to the nature of their work, bioinformaticians can work from home. The LSHTM group has a workplace lunch every Friday at the end of the month, to gather the entire team (or as much as possible) and just enjoy each other's company with strictly no work talk allowed! This month we went to Phoenix Palace, which has great food. We look forward to the next team lunch day next month and welcoming new additions to the team.
 ---
 

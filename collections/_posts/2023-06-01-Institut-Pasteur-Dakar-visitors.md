@@ -4,6 +4,7 @@ pid: makhtarniang
 hidden: false
 author: jthorpe
 link: none
+titleForBox: Institut Pasteur Dakar visitors
 brief:  Visitors from the Institut Pasteur Dakar visited London
 excerpt_separator: "<!--more-->"
 ---

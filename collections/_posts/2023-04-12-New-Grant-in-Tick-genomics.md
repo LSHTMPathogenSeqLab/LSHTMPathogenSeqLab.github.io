@@ -3,6 +3,7 @@ layout: post
 pid: ticks
 hidden: false
 author: tgclark
+titleForBox: New grant in Tick genomics
 link: https://www.ukri.org/news/ukri-and-defra-invest-7-million-to-fight-vector-borne-disease/?utm_medium=email&utm_source=govdelivery
 brief:  Recently, Susana and her team were awarded a UKRI-Defra grant to develop genomic tools (e.g., amplicon sequencing assays) and establish a consortium for a One Health approach to VBDs called the GenES_VBD network (Genomic Epidemiology Tools for the Surveillance of Vector-Borne Diseases applied to tick species, reservoirs, and pathogens). The consortium is coordinated by LSHTM (with Susana as the PI) and includes the UKHSA Medical Entomology & Zoonoses Ecology (MEZE) and Porton Down Genomics teams.
 excerpt_separator: "<!--more-->"

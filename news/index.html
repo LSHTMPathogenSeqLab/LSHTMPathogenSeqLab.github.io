@@ -279,7 +279,7 @@ console.log($(document).width())
                 {% endif %}
                 
                 <div class="col-4 grid-{{my_counter}} module" onmouseleave="startTimer()" data-optionid="{{post.pid}}"onmouseover="changeImage{{my_counter}}('{{image}}')" id="grid{{my_counter}}" onclick="window.location='{{link}}';">
-                    <a href="{{link}}">{{post.title }}</a>
+                    <a href="{{link}}">{{post.titleForBox }}</a>
                 </div>
                 
                 {% endfor %}
@@ -327,7 +327,7 @@ console.log($(document).width())
                   
                     <div class="col-xl-4" style="max-height: 450px; overflow-y: hidden;">
                       <div class="title">
-                        <h3 style="font-family: 'Heebo', sans-serif; text-align: center;"><a href="{{ link }}">{{ post.title }}</a></h3>
+                        <h3 style="font-family: 'Heebo', sans-serif; text-align: center;"><a href="{{ link }}">{{ post.titleForBox }}</a></h3>
                       </div>
                       <div class="content" style="text-align: center;">
                         {{ post.brief }}

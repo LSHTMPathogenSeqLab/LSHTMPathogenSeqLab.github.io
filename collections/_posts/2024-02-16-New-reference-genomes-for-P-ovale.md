@@ -3,8 +3,9 @@ layout: post
 pid: povaleref
 hidden: true
 author: mhiggins
+titleForBox: New reference genomes and whole genome sequence data for neglected <i>Plasmodium ovale</i> parasites to assist malaria epidemiology
 link: https://www.nature.com/articles/s41598-024-54382-5
-brief:  New reference genomes for Plasmodium ovale spp will assist large-scale genomic studies of these neglected malaria parasites.
+brief:  New reference genomes for <i>Plasmodium ovale spp</i> will assist large-scale genomic studies of these neglected malaria parasites.
 excerpt_separator: "<!--more-->"
 ---
 

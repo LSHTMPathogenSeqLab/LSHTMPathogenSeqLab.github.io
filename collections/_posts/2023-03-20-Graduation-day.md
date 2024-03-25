@@ -4,6 +4,7 @@ pid: graduation
 hidden: false
 author: jthorpe
 link: none
+titleForBox: Graduation day
 brief:  Members of our team celebrate their PhD's on graduation day
 ---
 

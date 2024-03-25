@@ -4,6 +4,7 @@ pid: danAdventures
 hidden: false
 author: dward
 link: none
+titleForBox: Dan returns from sequencing and teaching in Brazil
 brief:  Dr Dan Ward returns from his trip gathering samples and teaching teams in Brazil about nanopore sequencing
 excerpt_separator: "<!--more-->"
 ---

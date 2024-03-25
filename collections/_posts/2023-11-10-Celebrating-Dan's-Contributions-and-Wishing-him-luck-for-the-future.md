@@ -4,6 +4,7 @@ pid: IMG_2007
 hidden: false
 author: jthorpe
 link: none
+titleForBox: Celebrating Dan's contributions and wishing him well for the future
 brief:  Celebrating Dan's contributions and wishing him well in his new endeavor
 excerpt_separator: "<!--more-->"
 ---

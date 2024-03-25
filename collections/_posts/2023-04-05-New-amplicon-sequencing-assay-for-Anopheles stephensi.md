@@ -3,6 +3,7 @@ layout: post
 pid: anopheles
 hidden: false
 author: hacfordpalmer
+titleForBox: New amplicon sequencing assay for <i>Anopheles Stephensi</i>
 link: none
 title: "New amplicon sequencing assay for <em>Anopheles stephensi </em>"
 date: 2023-04-05

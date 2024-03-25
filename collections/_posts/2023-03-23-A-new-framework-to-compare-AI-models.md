@@ -6,6 +6,7 @@ author: tgclark
 title: "A new framework to compare AI models"
 date: 2023-03-23
 categories: [AI, machine learning]
+titleForBox: A new framework to compare AI models
 link: https://pubmed.ncbi.nlm.nih.gov/37033466/
 brief:  Artificial intelligence (AI) is impacting on many aspects of biomedical sciences and healthcare. We have been implementing AI methods that use whole genome sequencing data to identify pathogen mutations to predict drug resistance, geography, and outbreaks.    
 

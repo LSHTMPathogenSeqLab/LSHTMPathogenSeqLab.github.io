@@ -4,6 +4,7 @@ pid: omicsLdn
 hidden: false
 author: jthorpe
 link: none
+titleForBox: Successful 'Omics course here in London
 brief:  Hosted another 'Omics course here in London
 excerpt_separator: "<!--more-->"
 ---

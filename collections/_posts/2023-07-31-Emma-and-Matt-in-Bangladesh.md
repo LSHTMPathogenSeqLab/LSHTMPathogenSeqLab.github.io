@@ -4,6 +4,7 @@ pid: mattandemmainbangladesh
 hidden: false
 author: ecollins
 link: none
+titleForBox: Emma and Matt travel to Bangladesh
 brief:  Dr Matt Higgins and Emma Collins travel to Dhaka to reveal positive initial results for Xeno-Monitoring
 excerpt_separator: "<!--more-->"
 ---

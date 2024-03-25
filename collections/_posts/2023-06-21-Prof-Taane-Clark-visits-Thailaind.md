@@ -4,6 +4,7 @@ pid: taanethailand
 hidden: false
 author: jthorpe
 link: none
+titleForBox: Taane Clark visits Thailand
 brief:  Prof Taane Clark visits Thailand to talk about our work on infectious disease.
 excerpt_separator: "<!--more-->"
 ---

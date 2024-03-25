@@ -3,6 +3,7 @@ layout: post
 pid: anopholesbijagos
 hidden: true
 author: smoss
+titleForBox: Genomic surveillance of <i>Anopheles</i> mosquitoes on the Bijagós Archipelago 
 link: https://parasitesandvectors.biomedcentral.com/articles/10.1186/s13071-023-06085-5
 brief:  New paper on anopholes mosquitos is released
 excerpt_separator: "<!--more-->"
