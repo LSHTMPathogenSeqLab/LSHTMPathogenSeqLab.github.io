@@ -5,15 +5,27 @@ title: courses
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet"> </links>
- 
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</links>
 <scripts>
   <script src="https://kit.fontawesome.com/f8a9821c7d.js" crossorigin="anonymous"></script>
+<script>
+    const width  = window.innerWidth || document.documentElement.clientWidth || 
+document.body.clientWidth;
+const height = window.innerHeight|| document.documentElement.clientHeight|| 
+document.body.clientHeight;
 
+console.log(width, height);
+</script>
 </scripts>
 
 
 <style>
+    body{
+        background-color: rgb(30,32,34);
+    }
  .yearList li{
         width: 12.5%;
         float: left;
@@ -43,53 +55,354 @@ hr{
     z-index: 9; 
   
 }
-h4{
-    text-align: center;
+h1{
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: "Bebas Neue", sans-serif;
 }
+
+.new_design{
+    height: 100vh;
+}
+.title{
+    background-color: rgb(0,191,111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-fluid{
+    height: inherit;
+}
+.row{
+    height: inherit;
+}
+.text{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.text p{
+    text-align: left;
+    align-items: flex-start;
+    display:flex;
+    
+}
+.online-teaching {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.in-person{
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.btn{
+    color: black;
+    background-color: rgb(0,176,191);
+    border-color: rgb(30,32,34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transition: all 0.3s ease;
+  width: 50%;
+  padding: 5px;
+  margin-top: 5px;
+  
+  position: relative;
+  z-index: 20;
+
+}
+  .btn:active{
+    outline-color: black !important;
+  }
+  .btn:hover{
+    background-color: rgb(173,216,230);
+    transform: translateY(-3px);
+  box-shadow: 0 0 5px rgb(173,216,230), 0 0 7px rgb(173,216,230), 0 0 10px rgb(173,216,230);
+  }
+
+  .picture{
+    background-image: url("/assets/img/newspics/omicsLdn.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .course-list{
+    background-color: rgb(30,32,34);
+    height: 100vh;
+  }
+  .box {
+  position: relative;
+  padding: 1em 1.5em;
+  margin: 2em auto;
+  color: rgb(0,191,111);
+  background: rgb(0,191,111);
+  overflow: hidden;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+ 
+}
+.box1{
+    height: 100%;
+    width: 100%;
+    background-image: url("/assets/img/homepage/taane_teaching.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+}
+.box2{
+    height: 100%;
+    width:100%;
+    align-self: flex-start;
+    justify-content: flex-start;
+    background-image: url("/assets/img/newspics/omicsLnd.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: -5px 5px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: -5px 5px 5px rgba(0,0,0,0.8);
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.8);
+}
+.box3{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    background-image: url("/assets/img/newspics/omicsVietnam.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+@media (min-width: 1210px) {
+    .box1{
+    height: 80%;
+    width: 80%;
+    background-image: url("/assets/img/homepage/taane_teaching.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.8);
+}
+.box2{
+    height: 100%;
+    width:50%;
+    align-self: flex-start;
+    justify-content: flex-start;
+    background-image: url("/assets/img/newspics/omicsLnd.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: -5px 5px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: -5px 5px 5px rgba(0,0,0,0.8);
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.8);
+}
+.box3{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    background-image: url("/assets/img/newspics/omicsVietnam.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+    .box:before {
+    content: "";
+  position: absolute;
+  
+  width: 0px;
+  height: 0px;
+  
+  
+}
+.box1:before{
+    border-bottom: 250px solid rgb(0,191,111);
+  border-left: 100px solid rgb(30,32,34); 
+  top: 0%;
+  left: 0%;
+  -webkit-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+  border-radius: 2px;
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+}
+.box2:before{
+    top: 0%;
+  border-radius: 2px;
+  right: 0%;
+  border-right: 100px solid  rgb(30,32,34);
+  border-bottom: 250px solid rgb(0,191,111);
+  -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+  box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
+ 
+}
+
+.box3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 190px solid rgb(0,191,111); /* Adjust color to match the fold's color */
+  border-left: 90px solid rgb(30,32,34); /* Transparent border on the right */
+  box-shadow: 7px 7px 7px rgba(0,0,0,0.3);
+}
+
+.box3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 90px solid rgb(0,191,111); /* Transparent border on the top */
+  border-right: 200px solid rgb(30,32,34); /* Adjust color to match the background */
+  box-shadow: -7px -7px 7px rgba(0,0,0,0.3);
+}
+.online-teaching {
+  margin-bottom: 20px;
+  padding-right: 20px;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding-right: 1em 1.5em;
+}
+.in-person{
+    margin-bottom: 20px;
+  padding-left: 20px;
+  display: flex; 
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-right: 1em 1.5em;
+
+}
+}
+
+.past h1{
+    color: rgb(0,191,111);
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+.past{
+    padding-top: 30px;
+}
+.past p{
+   
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 28px;
+    color: rgb(0,191,111);
+}
+p{
+    font-family: "Abel",sans-serif;
+}
+.boxes{
+    display: flex;
+    flex-direction: column;
+}
+.numeroUno{
+    height: 25%;
+}
+.numeroDos{
+    height: 75%;
+    padding-top: 30px;
+}
+.boxes p{
+    color: white;
+    align-items: center;
+}
+.col-xl-8.boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+
 </style>
 <body id="Capacity">
 
 
 <div class="main">
     {% assign my_array = "" | split: ',' %}
-    <section class="heading" style="background-color:  rgb(49,48,48);height: 19vh; position: relative;">
-        <div class="container" >
-            <div class="text-align"  style=" box-shadow: 0 1px 6px rgb(255,255,255,0.3), 0 1px 4px rgba(255,255,255,0.2); background-color:rgb(0,191,111) ;position: absolute; bottom: 0; right: 0; width: 40vw; height: 80px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
-                <h1 >COURSES</h1>
-            </div>
-            
-        
-    </section>
-<section class="course-list" style="margin-top: 200px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Below are a list of courses past and present</h2>
-            </div>
-        </div>
-        <div class="courses"  style="display: block; margin-top: 200px;">
-            {% for course in site.courses %}
-            {% assign image = course.pid %}
-            <div class="row" style="margin-bottom: 100px;">
-                
-                    <div class="col-md-8">
-                        <div class="funder">
-                            <h4 class="card-text">{{course.name}}</h4>
-                            <p class="card-text" style="margin-top: 50px;">{{course.excerpt}}</p>
-                        </div>
-                    </div>
-                        <div class="col-md-4">
-                            <div class="image" style="position: relative;">
-                              <img class="card-img-top p-2" style="height: 250px; width: auto; display:block;
-                              margin:auto;  align-items: center;" src="/assets/img/course/{{image}}.jpg" alt="Course Image">
-                              <a href="{{course.link}}" style="margin:0 auto;
-                              display:block; width: 50%; align-items: center; margin-top: 20px;" class="btn btn-sm btn-outline-secondary">Learn more and enroll!</a>
+    <div class="course2024">
+        <section class="new_design">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-4 title">
+                        <div class="text">
+                            <h1>Infectious disease omics 2024</h1>
+                            <p>Our course, here at LSHTM in December</p>
+                            <div class="button">
+                                <a href="https://www.lshtm.ac.uk/study/courses/short-courses/infectious-disease-omics" type="button" class="btn btn-primary">SIGN UP!</a>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="col-xl-8 picture">
+
+                    </div>
                 </div>
+            </div>
+            
+        </section>
+    </div>
+<div class="pastCourses">
+    <section class="course-list" >
+    <div class="container-fluid">
+        <div class="row numeroUno">
+            <div class="col-xl-12 past">
+                <h1>Past courses</h1>
+                <p>We have run infectious disease omics from 2015</p>
+            </div>
+        </div>
+        <div class="row numeroDos">
+            <div class="col-xl-4 boxes">
+                <div class="box box1">
+                    
+                </div>
+            </div>
+            <div class="col-xl-8 boxes">
+                
+                <div class="box box2">
+                   
+                </div>
+                <p class="in-person">We offer teaching in person, here at LSHTM.</p>
+                <p class="online-teaching">And online we offer teaching over Zoom with dedicated staff for online students</p>
+                <div class="box box3">
+                    
+                </div>
+            </div>
+        </div>
+
+      
         
     </div>
 </section>
+</div>
+</div>
 </body>
