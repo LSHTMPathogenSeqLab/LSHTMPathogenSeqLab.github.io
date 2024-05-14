@@ -8,4 +8,4 @@ dates: July
 
 ---
 
-(Brazilian Biometrics Society, Maringa, Brazil, July 2011, 2 days, 100 participants) [with Nuno Sepulveda] 
+Brazilian Biometrics Society, Maringa, Brazil, July 2011 with Nuno Sepulveda 

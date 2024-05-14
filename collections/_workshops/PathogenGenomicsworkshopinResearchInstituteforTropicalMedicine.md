@@ -11,4 +11,4 @@ dates: November
 
 
 
- (Research Institute for Tropical Medicine 15 participants) with Dodge Lim
+ Research Institute for Tropical Medicine, November 2017. Funded by the British Council and Philippine DOST with Dodge Lim

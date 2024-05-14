@@ -9,4 +9,4 @@ dates: March
 
 ---
 
-Univ. Cape Town, 15 participants with Keertan Dheda
+Univ. Cape Town. Funded by British Council Newton Researcher Links Workshop grants with Keertan Dheda

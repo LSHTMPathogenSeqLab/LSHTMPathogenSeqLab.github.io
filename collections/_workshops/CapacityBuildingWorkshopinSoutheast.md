@@ -8,4 +8,4 @@ dates: February
 
 ---
 
-Genomic epidemiology enables tracking of pathogen transmission over all spatial scales, from local outbreaks to global pandemics, thereby highlighting the scale of interventions required. Combining genomic data with individual-level metadata can identify demographic factors driving transmission patterns
+ National University Singapore, Feb. 2-6 2015 with YY Teo
