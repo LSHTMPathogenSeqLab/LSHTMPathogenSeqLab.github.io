@@ -1,7 +1,7 @@
 # Pathogenseq lab website
 
 This repo hosts the pathogenseq lab website.
-The website uses github's built in jekyll static site generator to create a website at [https://lshtmpathogenseqlab.github.io/](https://lshtmpathogenseqlab.github.io/) using markdown files.
+The website uses github's built in jekyll static site generator to create a website at [https://lshtmpathogenseqlab.github.io/](https://genomics.lshtm.ac.uk/) using markdown files.
 
 ## Modifying
 
