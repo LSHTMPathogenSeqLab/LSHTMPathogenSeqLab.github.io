@@ -3,7 +3,7 @@ layout: people
 pid: smoss
 forname: Sophie
 surname: Moss
-title: PhD Student
+title: Research fellow
 Important-fact: 5'4" but with a brown belt in Karate
 tags:
   - Malaria

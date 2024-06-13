@@ -8,7 +8,8 @@ theme:
 link:  https://genomics.lshtm.ac.uk/mtbrowse/#
 people:
   - jthorpe
-highlighted: true
+  - nbillows
+highlighted: false
 
 ---
 

@@ -1,0 +1,11 @@
+---
+layout: post
+pid: compmuttb
+hidden: true
+titleForBox: CompMutTb. A framework to assist in identifying compensatory mutations
+author: nbillows
+link: https://www.nature.com/articles/s41598-024-62946-8
+brief:  We have developed the CompMut-TB framework which can assist with identifying compensatory mutations which is important for more precise genome-based profiling of drug-resistant TB strains and to further understanding of the evolutionary mechanisms that underpin drug-resistance.
+excerpt_separator: "<!--more-->"
+---
+Tuberculosis (TB), caused by <i>Mycobacterium tuberculosis</i>, has a significant impact on global health worldwide. The development of multi-drug resistant strains that are resistant to the first-line drugs isoniazid and rifampicin threatens public health security. Rifampicin and isoniazid resistance are largely underpinned by mutations in <i>rpoB</i> and <i>katG</i> respectively and are associated with fitness costs. Compensatory mutations are considered to alleviate these fitness costs and have been observed in <i>rpoC/rpoA</i> (rifampicin) and <i>oxyR’-ahpC</i> (isoniazid). We developed a framework (CompMut-TB) to detect compensatory mutations from whole genome sequences from a large dataset comprised of 18,396 <i>M. tuberculosis</i> samples. We performed association analysis (Fisher’s exact tests) to identify pairs of mutations that are associated with drug-resistance, followed by mediation analysis to identify complementary or full mediators of drug-resistance. The analyses revealed several potential mutations in <i>rpoC</i> (N = 47), <i>rpoA</i> (N = 4), and <i>oxyR’-ahpC</i> (N = 7) that were considered either ‘highly likely’ or ‘likely’ to confer compensatory effects on drug-resistance, including mutations that have previously been reported and validated. Overall, we have developed the CompMut-TB framework which can assist with identifying compensatory mutations which is important for more precise genome-based profiling of drug-resistant TB strains and to further understanding of the evolutionary mechanisms that underpin drug-resistance.

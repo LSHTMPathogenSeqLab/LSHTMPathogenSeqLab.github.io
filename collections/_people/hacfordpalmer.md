@@ -4,7 +4,7 @@ alumni: false
 pid: hacfordpalmer
 forname: Holly
 surname: Acford-Palmer
-title: BBSRC LIDO PhD Student
+title: Research fellow
 Important-fact: Passionate scarf knitter
 tags: 
   - Vectors 
