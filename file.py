@@ -13,7 +13,7 @@ else:
 author_article_results_data = []
 
 params = {
-    "api_key": "4c772e42b5b138693e07d3372499ec3e71458e1e6182aad893b7868e63550ed1",
+    "api_key":"",
     "engine": "google_scholar_author",
     "hl": "en",
     "sort": "pubdate",
