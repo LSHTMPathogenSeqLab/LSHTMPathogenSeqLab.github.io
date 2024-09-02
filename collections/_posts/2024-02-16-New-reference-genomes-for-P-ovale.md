@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: povaleref
-hidden: true
+hidden: false
 author: mhiggins
 titleForBox: New reference genomes and whole genome sequence data for neglected <i>Plasmodium ovale</i> parasites to assist malaria epidemiology
 link: https://www.nature.com/articles/s41598-024-54382-5
