@@ -11,9 +11,10 @@ if os.path.exists("_data/publications.json"):
 else:
     print("File does not exist")
 author_article_results_data = []
+api_key = open(".api.txt","r")
 
 params = {
-    "api_key": "4c772e42b5b138693e07d3372499ec3e71458e1e6182aad893b7868e63550ed1",
+    "api_key": api_key,
     "engine": "google_scholar_author",
     "hl": "en",
     "sort": "pubdate",
