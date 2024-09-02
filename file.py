@@ -67,7 +67,7 @@ print("Author Articles Saved.")
 
 os.system("git add _data/publications.json")
 
-commit_msg = "Update every friday publications data"
+commit_msg = "update publications data"
 os.system(f'git commit -a -m "{commit_msg}"')
 
 os.system("git push")
