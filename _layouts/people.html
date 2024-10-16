@@ -594,7 +594,7 @@ color: white; }
                       
                     <a class="p-3" href="{{link}}"  id="projectImage{{my_counter}}">
                       <img  src="/assets/img/projects/{{project.theme[0]}}/{{project.pid}}.png" class="img-fluid">
-                      <div class="title">{{project.title}}</div>
+                      <div class="title">{{project.name}}</div>
                     </a>
                   </div>
                   {% else %}
@@ -602,7 +602,7 @@ color: white; }
                     <a class="p-3" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" id="projectImage{{my_counter}}">
                       <img src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" 
                       class="img-fluid">
-                      <div class="title">{{project.title}}</div>
+                      <div class="title">{{project.name}}</div>
                     </a>
                     </div>
                     
@@ -625,7 +625,7 @@ color: white; }
                     
                   <a class="p-3" href="{{link}}"  id="projectImage{{my_counter}}">
                     <img  class="img-fluid" src="/assets/img/projects/{{project.theme[0]}}/{{project.pid}}.png">
-                    <div class="title">{{project.title}}</div>
+                    <div class="title">{{project.name}}</div>
                   </a>
                 </div>
                 {% else %}
@@ -633,7 +633,7 @@ color: white; }
                   <a class="p-3" data-bs-toggle="modal" data-bs-target="#exampleModal{{my_counter}}" id="projectImage{{my_counter}}">
                     <img src="/assets/img/projects/{{project.theme}}/{{project.pid}}.png" 
                     class="img-fluid">
-                    <div class="title">{{project.title}}</div>
+                    <div class="title">{{project.name}}</div>
                   </a>
                   </div>
                   
@@ -666,7 +666,7 @@ color: white; }
         <div class="modal-content">
           
           <div class="modal-header">
-            <h1 style="color: black;" class="modal-title fs-5" id="exampleModalLabel">{{project.title}}</h1>
+            <h1 style="color: black;" class="modal-title fs-5" id="exampleModalLabel">{{project.name}}</h1>
             
           </div>
           <div class="modal-body">

@@ -21,4 +21,4 @@ tags:
 ---
  
 
-I completed my PhD at the University of Umea, Sweden on the “Genetic analysis of murine malaria”. In 2004, I was awarded a Marie Curie Post Doc fellowship to work on “Genetic determinants of human severe malaria” at the University of Oxford. In 2007, I moved to The Wellcome Trust Sanger Institute to investigate the worldwide genetic diversity of the malaria parasites Plasmodium falciparum. I moved to the London School of Hygiene & Tropical Medicine in 2015 to work on evolution of malaria parasite and more
+I completed my PhD at the University of Umea, Sweden on the “Genetic analysis of murine malaria”. In 2004, I was awarded a Marie Curie Post Doc fellowship to work on “Genetic determinants of human severe malaria” at the University of Oxford. In 2007, I moved to The Wellcome Trust Sanger Institute to investigate the worldwide genetic diversity of the malaria parasites <i>Plasmodium falciparum</i>. I moved to the London School of Hygiene & Tropical Medicine in 2015 to work on evolution of malaria parasite and more
