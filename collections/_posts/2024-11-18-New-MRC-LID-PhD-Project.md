@@ -2,10 +2,10 @@
 layout: post
 pid: mrc-phd
 hidden: true
-titleForBox: New MRC LID PhD project
+titleForBox: A new MRC LID PhD project is available to apply for
 author: jthorpe
 link: https://mrc-lid.lshtm.ac.uk/
-brief:  A new MRC LID PhD project is now available to apply for. Please apply here https://mrc-lid.lshtm.ac.uk/ .
+brief:  A new MRC LID PhD project is now available to apply for. Please apply through https://mrc-lid.lshtm.ac.uk/ .
 excerpt_separator: "<!--more-->"
 ---
 
