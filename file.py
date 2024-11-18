@@ -70,4 +70,5 @@ os.system("git add _data/publications.json")
 commit_msg = "update publications data"
 os.system(f'git commit -a -m "{commit_msg}"')
 
+
 os.system("git push")
