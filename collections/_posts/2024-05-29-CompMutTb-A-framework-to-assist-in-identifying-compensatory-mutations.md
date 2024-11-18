@@ -1,8 +1,8 @@
 ---
 layout: post
 pid: compmuttb
-hidden: true
-titleForBox: CompMutTb. A framework to assist in identifying compensatory mutations
+hidden: false
+titleForBox: New method identifies compensatory mutations for TB drug resistance
 author: nbillows
 link: https://www.nature.com/articles/s41598-024-62946-8
 brief:  We have developed the CompMut-TB framework which can assist with identifying compensatory mutations which is important for more precise genome-based profiling of drug-resistant TB strains and to further understanding of the evolutionary mechanisms that underpin drug-resistance.

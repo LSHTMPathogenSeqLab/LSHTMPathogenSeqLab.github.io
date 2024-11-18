@@ -1,11 +1,11 @@
 ---
 layout: default
-name: Plasmo Maps
+name: malaria-genomaps
 theme: 
   - malaria
   - software
 pid: pmaps
-link: http://genomics.lshtm.ac.uk/plasmomaps/#/
+link: http://genomics.lshtm.ac.uk/vbdmaps/#/
 people:
   - jthorpe
 highlighted: false
