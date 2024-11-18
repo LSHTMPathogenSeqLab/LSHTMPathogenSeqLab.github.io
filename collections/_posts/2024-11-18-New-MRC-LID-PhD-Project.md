@@ -1,6 +1,6 @@
 ---
 layout: post
-pid: mrc-project
+pid: mrc-phd
 hidden: true
 titleForBox: New MRC LID PhD project
 author: jthorpe

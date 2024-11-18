@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: japan
-hidden: true
+hidden: false
 titleForBox: Members of the team attend ICE2024 in Kyoto, Japan
 author: jthorpe
 link: none

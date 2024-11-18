@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: mtb_phil
-hidden: true
+hidden: false
 titleForBox: Largest Whole genome sequencing study of <i>Mycobacterium tuberculosis</i> in the Philippines reveals circulating strain types and drug-resistance mutations
 author: lwang
 link: https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/39179783/

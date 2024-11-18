@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: compmuttb
-hidden: true
+hidden: false
 titleForBox: New method identifies compensatory mutations for TB drug resistance
 author: nbillows
 link: https://www.nature.com/articles/s41598-024-62946-8

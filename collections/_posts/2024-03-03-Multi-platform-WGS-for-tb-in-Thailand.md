@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: multiplatform
-hidden: true
+hidden: false
 titleForBox: New publication showing the utility of whole genome sequencing for informing TB drug resistance and transmission dynamics
 author: jthorpe
 link: https://www.nature.com/articles/s41598-024-55865-1

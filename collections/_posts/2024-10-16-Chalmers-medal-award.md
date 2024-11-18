@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: chalmers
-hidden: true
+hidden: false
 titleForBox: Prof. Taane Clark awarded the chalmers medal by the Royal Society of Tropical Medicine & Hygiene.
 author: jthorpe
 link: none
