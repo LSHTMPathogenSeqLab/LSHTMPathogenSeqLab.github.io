@@ -1,0 +1,12 @@
+---
+layout: post
+pid: mtb-ai
+hidden: true
+titleForBox: New TB genomics paper explores the application of AI methods for predicting drug resistance.
+author: jthorpe
+link: https://pubmed.ncbi.nlm.nih.gov/39511309/
+brief: Leveraging large-scale Mycobacterium tuberculosis whole genome sequence data to characterise drug-resistant mutations using machine learning and statistical approaches 
+excerpt_separator: "<!--more-->"
+---
+
+Tuberculosis disease (TB), caused by Mycobacterium tuberculosis (Mtb), is a major global public health problem, resulting in > 1 million deaths each year. Drug resistance (DR), including the multi-drug form (MDR-TB), is challenging control of the disease. Whilst many DR mutations in the Mtb genome are known, analysis of large datasets generated using whole genome sequencing (WGS) platforms can reveal new variants through the assessment of genotype-phenotype associations. Here, we apply tree-based ensemble methods to a dataset comprised of 35,777 Mtb WGS and phenotypic drug-susceptibility test data across first- and second-line drugs. We compare model performance across models trained using mutations in drug-specific regions and genome-wide variants, and find high predictive ability for both first-line (area under ROC curve (AUC); range 88.3-96.5) and second-line (AUC range 84.1-95.4) drugs. To aggregate information from low-frequency variants, we pool mutations by functional impact and observe large improvements in predictive accuracy (e.g., sensitivity: pyrazinamide + 25%; ethionamide + 10%). We further characterise loss-of-function mutations observed in resistant phenotypes, uncovering putative markers of resistance (e.g., ndh 293dupG, Rv3861 78delC). Finally, we profile the distribution of known DR-associated single nucleotide polymorphisms across discretised minimum inhibitory concentration (MIC) data generated from phenotypic testing (n = 12,066), and identify mutations associated with highly resistant phenotypes (e.g., inhA - 779G > T and 62T > C). Overall, our work demonstrates that applying machine learning to large-scale WGS data is useful for providing insights into predicting Mtb binary drug resistance and MIC phenotypes, thereby potentially assisting diagnosis and treatment decision-making for infection control

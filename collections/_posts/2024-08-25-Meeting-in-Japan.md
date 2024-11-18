@@ -2,7 +2,7 @@
 layout: post
 pid: japan
 hidden: true
-titleForBox: Meeting in Japan
+titleForBox: Members of the team attend ICE2024 in Kyoto, Japan
 author: jthorpe
 link: none
 brief:  Susana, Emma and Taane attended the internal conference on entomology in Kyoto. Emma organised a symposium on genomic methods.

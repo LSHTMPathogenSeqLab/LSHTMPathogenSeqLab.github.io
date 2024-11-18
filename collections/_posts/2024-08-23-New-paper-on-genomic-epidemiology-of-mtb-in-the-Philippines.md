@@ -2,7 +2,7 @@
 layout: post
 pid: mtb_phil
 hidden: true
-titleForBox: Genomic epidemiology of Mycobacterium tuberculosis in the Philippines
+titleForBox: Largest Whole genome sequencing study of <i>Mycobacterium tuberculosis</i> in the Philippines reveals circulating strain types and drug-resistance mutations
 author: lwang
 link: https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/39179783/
 brief:  Linfeng has published a paper on the genomic epidemiology of Mycobacterium tuberculosis in the Philippines, which revealed mutations linked to extensive drug resistance and transmission networks country-wide.
