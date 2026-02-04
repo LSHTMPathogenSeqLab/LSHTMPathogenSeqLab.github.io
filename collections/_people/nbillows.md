@@ -10,7 +10,7 @@ forname: Nina
 
 surname: Billows
 
-title: RVC-funded PhD Student
+title: Research fellow
 
 Important-fact: Plays the ukulele!
 

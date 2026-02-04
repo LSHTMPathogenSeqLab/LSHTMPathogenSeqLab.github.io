@@ -60,6 +60,7 @@ font-size: 20px;
 .team-member-panel,.team-leader-panel,.team-member-alumni{
   background-color: white;
   width: inherit+2px;
+  padding-bottom: 10px;
   
 }
 .team-member-panel:hover, .team-leader-panel:hover,.team-member-alumni:hover{
@@ -193,17 +194,17 @@ color: rgb(0,191,111);
    font-size: 12px;
 }
 @media (max-width: 1400px) {
-  .col-4{
+  .col-4, .col-6{
   width:50%
 }    
 }
 @media (max-width: 990px) {
-  .col-4{
+  .col-4, .col-6{
     width: 200%;
 }    
 }
 @media (max-width: 700px) {
-  .col-4{
+  .col-4, .col-6{
     width: 150%;
     margin-left: 10px;
 }    
@@ -344,7 +345,7 @@ align-items: center;
             {% if person.Leader == true %}
             {% assign overlords = overlords | plus: 1 %}
             
-            <div class="col-4 team-member" style="margin-bottom: 21px; display: inline;">
+            <div class="col-6 team-member" style="margin-bottom: 21px; display: inline;">
         
               <div class="team-member-wrap" style="position: relative;">
                

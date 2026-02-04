@@ -52,7 +52,6 @@ while articles_is_present:
                 "article_cited_by_cites_id": cited_by_cites_id,
             })
 
-    # Check for pagination and update the parameters accordingly
     if "next" in results.get("serpapi_pagination", {}):
         next_page_url = results["serpapi_pagination"]["next"]
         next_params = dict(parse_qsl(urlsplit(next_page_url).query))
@@ -61,7 +60,7 @@ while articles_is_present:
         articles_is_present = False
 
 print("Waiting for author articles to save...")
-with open('_data/publications.json', 'w') as f:  # Changed to 'w' to overwrite instead of append
+with open('_data/publications.json', 'w') as f:  
     json.dump(author_article_results_data, f)
 print("Author Articles Saved.")
 

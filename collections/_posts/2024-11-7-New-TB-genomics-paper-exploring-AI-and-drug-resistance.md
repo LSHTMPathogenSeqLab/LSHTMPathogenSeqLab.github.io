@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: mtb-ai
-hidden: true
+hidden: false
 titleForBox: New TB genomics paper explores the application of AI methods for predicting drug resistance.
 author: jthorpe
 link: https://pubmed.ncbi.nlm.nih.gov/39511309/

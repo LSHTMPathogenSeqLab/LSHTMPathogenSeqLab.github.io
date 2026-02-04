@@ -2,11 +2,10 @@
 
 <style>
     .footer ul li{
-        display: inline-block;
+        display: block;
         list-style: none;
         font-size: 14px;
-        margin: 20px;
-
+        padding-right: 1rem;
         
     }
 .menu{
@@ -21,12 +20,22 @@
 img{
     max-width: inherit;
 }
+.footer{
+    padding: 20px;
+    text-align: center;
+}
+.image-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 </style>
 
 <footer class="site-footer" style="background-color:  rgb(49,48,48); width: 100%;  margin-top: 200px; position:relative; bottom: 0;">
 <div class="container" >
     <div class="row" style="color: white;">
-    <div class="col-md-6">
+    <div class="col-md-6 footer">
         <h2 style="margin-top: 50px; font-family: 'Quicksand', sans-serif;">The Applied Genomics Centre For Infectious Diseases</h2><br>
         <p> Keppel Street
             <br>
@@ -38,14 +47,14 @@ img{
 
         <ul class="menu" style="font-size: 14px;">
                 <li>
-                    <a href="https://www.lshtm.ac.uk/aboutus/contact">Contact us</a>
+                    <a href="https://www.lshtm.ac.uk/aboutus/contact">Contact us via the school</a>
                 </li>
                 <li>
-                    <p>Email us for inquiries <a href="mailto:joseph.thorpe@lshtm.ac.uk">tagc@lshtm.ac.uk</a>
+                    <a href="mailto:joseph.thorpe@lshtm.ac.uk">Email us directly for enquiries </a>
                 </li>
             </ul>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 image-area">
         <img src="/assets/img/logo/logo.png">
     </div>
 </div>

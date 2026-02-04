@@ -1,6 +1,6 @@
 ---
 layout: people
-alumni: false
+alumni: true
 pid: mdejesus
 forname: Myrela
 surname: de Jesus

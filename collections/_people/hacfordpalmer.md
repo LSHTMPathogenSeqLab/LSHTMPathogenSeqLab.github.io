@@ -1,6 +1,6 @@
 ---
 layout: people
-alumni: false
+alumni: true
 pid: hacfordpalmer
 forname: Holly
 surname: Acford-Palmer

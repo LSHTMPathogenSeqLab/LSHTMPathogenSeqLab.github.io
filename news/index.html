@@ -77,6 +77,7 @@ border-spacing: 0;
     bottom: 0;
     width: 80%;
     height: 50px;
+    padding-left:10px
 }
 .pastEvents{
     margin-top:250px;
@@ -128,6 +129,7 @@ position: relative;
     position: absolute;
     bottom: 0;
     width: 90%;
+    padding-left:10px;
     height: 50px;
 }
 .grid-1, .grid-2,.grid-3{
@@ -157,9 +159,19 @@ position: relative;
  
 }
 
-.col-4{
-    object-fit: contain;
+.upcoming-items > :nth-child(1),.upcoming-items > :nth-child(2){
+    border-right: 1px solid rgb(0,191,111);
+    padding: 30px;
+    
 }
+
+.upcoming-items > :nth-child(3){
+
+    padding: 10px;
+    
+}
+
+
 
 .grid-1 {
   
@@ -220,6 +232,14 @@ top: 50vh;
   text-decoration: none;
   font-family: 'Heebo', sans-serif;
 }
+.powerpoint{
+    color: black;
+}
+.powerpoint:hover{
+    color: rgb(0,191,111);
+}
+
+
 .author{
     height:fit-content;
 }
@@ -244,7 +264,28 @@ color: rgb(49,48,48);
     position: absolute;
     top: 0;
 }
+.newsbox .content {
+    
+    flex-grow: 1;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
+}
+.col-xl-4 .title,
+.col-xl-4 .author {
+  flex-shrink: 0;
+}
+.newsbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 450px;          /* make all boxes same height */
+  overflow: hidden;
+  background: white;      /* optional: clean background */
+  border-radius: 10px;    /* optional: visual consistency */
+  padding: 10px;
+}
 </style>
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -296,24 +337,36 @@ console.log($(document).width())
             </div>
             
             <div class="bottomevents">
-                <h3 style="margin-left: 20px; margin-top: 5px;">MRC LID PhD Projects</h3>
+                <h3 style="padding-left: 20px; padding: 5px;">Upcoming events</h3>
+                <br>
+                    <h6 style="margin-left: 20px; margin-top: 5px;">Check out our upcoming events we are involved in</h6>
+                
             </div>
-            <div class="bottomevents">
-                <h6 style="margin-left: 20px; margin-top: 5px;">We are offering two PhD projects Select a powerpoint to download below:</h6>
-            </div>
+            
         </div>
     </section>
     <section class="events">
         <div class="container">
           <div class="bottomevents2" >
-            <div class="row" style="height: inherit;">
-              <div class="col-6" style="display: flex; text-align: center; align-items: center; justify-content: center; height: inherit;">
-                <p>Susana Campino's project  <a href="/assets/files/MRC_LID_Campino_slides.pptx">Download</a></p>
+            <div class="row upcoming-items" style="height: inherit;">
+                <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
+                    <p>New work on <i>aedes aegypti</i> to be released</i></p>
+                </div> 
+                <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
+                    <p>New tick genomes to be released</p>
+                </div>
+                <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
+                    <p>New sandfly genomes to be released</p>
+                </div>
+              <!-- <div class="col-6" style="display: flex; text-align: center; align-items: center; justify-content: center; height: inherit; flex-direction: column;">
+                <p>Susana Campino's project </p>
+                <a class="powerpoint" href="/assets/files/MRC_LID_Campino_slides.pptx">Download</a>
               </div>
-              <div class="col-6" style="display: flex; align-items: center; justify-content: center;">
+              <div class="col-6" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
                 <p>Taane Clark's project </p>
-                <a href="/assets/files/MRC_LID_Clark_slides.pptx">Download</a>
-              </div>
+                <a class="powerpoint"  href="/assets/files/MRC_LID_Clark_slides.pptx">Download</a>
+
+              </div> -->
               <!-- <div class="col-4" style="display: flex; align-items: center; justify-content: center;">
                 <p></p>
             </div> -->
@@ -321,6 +374,7 @@ console.log($(document).width())
         </div>
       </div>
     </section>
+    
     {% assign count = 0 %}
       
     <section class="pastEvents">
@@ -340,7 +394,7 @@ console.log($(document).width())
                   
                   {% endif %}
                   
-                    <div class="col-xl-4" style="max-height: 450px; overflow-y: hidden;">
+                    <div class="col-xl-4 newsbox" style="max-height: 450px; overflow-y: hidden;">
                       <div class="title">
                         <h3 style="font-family: 'Heebo', sans-serif; text-align: center;"><a href="{{ link }}">{{ post.titleForBox }}</a></h3>
                       </div>

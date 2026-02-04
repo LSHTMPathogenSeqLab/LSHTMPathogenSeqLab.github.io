@@ -1,7 +1,7 @@
 ---
 layout: post
 pid: nussenzweig
-hidden: true
+hidden: false
 titleForBox: Jamille Dombrowski wins the Ruth Nussenzweig Medal
 author: jthorpe
 link: none

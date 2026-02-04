@@ -1,75 +1,115 @@
-
 <links>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></links>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-        <style>
-            @media (max-width:990px){
-                nav.navbar li a {
-                    background-color: rgb(49,48,48);
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</links>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+<style>
+    @media (max-width:990px){
+        nav.navbar li a {
+            background-color: rgb(49,48,48);
         }
-            }
-            nav.navbar li a {
-          color: white;
-          font-family: 'Lato', sans-serif;
-         border-radius: 5px;
-        }  
-        nav.navbar li{
-            margin:10px
-        }  
-        nav.navbar li a:hover {
-            font-weight: 900;
-            color: white;
-            background-color: rgb(0,191,111);;
-        }
-        #people  .nav-item-1, #Home .nav-item-2, #Capacity .nav-item-3, #publications .nav-item-4, #research .nav-item-5, #News .nav-item-6, #Funding  .nav-item-7{
-            background: rgb(0,191,111);
-            border-radius: 5px;
-        }
-        .navbar-expand-lg{
-            background-color: rgba(49, 48, 48);
-            height: 95px;
-            width: 100%;
-            z-index: 99999999999999999;
+    }
+    .collapse.navbar-collapse {
+    display: flex !important;
+    justify-content: center !important;
+    flex-grow: 1;
 }
-        </style>
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    
+}
+#main_nav{
+    padding-right: 100px;
+}
+    nav.navbar li a {
+        color: white;
+        font-family: 'Lato', sans-serif;
+    }  
+    nav.navbar li {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }  
+    nav.navbar li a:hover {
+        font-weight: 900;
+        color: white;
+        background-color: rgb(0,191,111);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        border-radius: 5px;
+    }
+    #people .nav-item-1, #Home .nav-item-2, #Capacity .nav-item-3, #publications .nav-item-4, #research .nav-item-5, #News .nav-item-6, #Funding .nav-item-7, #Data .nav-item-8 {
+        background: rgb(0,191,111);
+        border-radius: 5px;
+    }
+    .navbar-expand-lg {
+        background: linear-gradient(145deg, #3d3d3d, #5a5a5a);
+        height: 95px;
+        width: 100%;
+        z-index: 99999999999999999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid rgb(0,191,111);
+    }
+    .heaader, .image-link {
+        display: flex;
         
-        
-        <nav class="navbar navbar-expand-lg navbar-light  sticky-top justify-content-center "  >
-            <div class="container-fluid" style="padding: 20px;">
-                <a href="{{site.url}}">
-                <img src="/assets/img/logo/logosmol.png" ></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(0,191,111);color:white">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse w-100" id="main_nav" style="background-color: rgba(49, 48, 48,0); margin-top: -10px;">
-                <ul class="navbar-nav w-100 justify-content-center" >
-                    <li class="nav-item-2 "> <a class="nav-link" href="/">Home </a> </li>
-                    <li class="nav-item-1"><a class="nav-link" href="/people"> The team </a></li>
-                    <li class="nav-item-5 dropdown" style="background-color: rgba(49, 48, 48,0);">
-                        <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"  aria-expanded="false">Our research</a>
-                        <ul class="dropdown-menu" style="background-color: rgb(49,48,48);">
-                            
-                                <li><a class="dropdown-item" href="/themes/malaria"> Malaria</a></li>
-                            
-                                <li><a class="dropdown-item" href="/themes/tuberculosis"> Tuberculosis</a></li>
-                                <li><a class="dropdown-item" href="/themes/vectors"> Vectors</a></li>
-                                <li><a class="dropdown-item" href="/themes/amr"> AMR</a></li>
-                                <li><a class="dropdown-item" href="/themes/viruses"> Viruses</a></li>
-                                <li><a class="dropdown-item" href="/themes/software"> Software</a></li>
-                                <li><a</li>
-                            
-                        </ul>
-                    </li>
-                    <li class="nav-item-3 "><a class="nav-link"  href="/teaching"> Capacity Strengthening </a></li>
-                    
-                    
-                    <li class="nav-item-4"><a class="nav-link" href="/publications"> Publications </a></li>
-                    
-                    <li class="nav-item-6 "> <a class="nav-link" href="/news">News </a> </li>
-                    <li class="nav-item-7"><a class="nav-link" href="/funding"> Funding </a></li>
-                </ul>
-                </div> <!-- navbar-collapse.// -->
-            </div> <!-- container-fluid.// -->
-        </nav>
+        justify-content: flex-start;
+        height: inherit;
+    }
+    
+    .heaader img {
+        height: inherit;
+        width: auto;
+    }
+    .heaader{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+
+    .heaader a.image-link{
+        display: flex;
+        align-items: center;
+
+    }
+    
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="contain heaader">
+        <a class="image-link" href="{{site.url}}">
+            <img src="/assets/img/logo/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(0,191,111);color:white">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-100" id="main_nav" style="background-color: rgba(49, 48, 48,0);">
+            <ul class="navbar-nav w-100 justify-content-center">
+                <li class="nav-item-2"><a class="nav-link" href="/">Home </a></li>
+                <li class="nav-item-1"><a class="nav-link" href="/people">The team </a></li>
+                <li class="nav-item-5 dropdown" style="background-color: rgba(49, 48, 48,0);">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Our research</a>
+                    <ul class="dropdown-menu" style="background-color: rgb(49,48,48);">
+                        <li><a class="dropdown-item" href="/themes/malaria">Malaria</a></li>
+                        <li><a class="dropdown-item" href="/themes/tuberculosis">Tuberculosis</a></li>
+                        <li><a class="dropdown-item" href="/themes/vectors">Vectors</a></li>
+                        <li><a class="dropdown-item" href="/themes/amr">AMR</a></li>
+                        <li><a class="dropdown-item" href="/themes/viruses">Viruses</a></li>
+                        <li><a class="dropdown-item" href="/themes/software">Software</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item-3"><a class="nav-link" href="/teaching">Capacity Strengthening </a></li>
+                <li class="nav-item-4"><a class="nav-link" href="/publications">Publications </a></li>
+                <li class="nav-item-6"><a class="nav-link" href="/news">News </a></li>
+                <li class="nav-item-7"><a class="nav-link" href="/funding">Funding </a></li>
+                <li class="nav-item-8"><a class="nav-link" href="/data">Data </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

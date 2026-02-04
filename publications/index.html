@@ -136,6 +136,7 @@ hr{
                 {% endunless %}
                 {% endfor %}
                 {% for item in my_array %}
+              
                 <li>
                   <a class="{{item}}" id="unselectable" > {{item}}</a>
                 </li>
@@ -150,6 +151,7 @@ hr{
     text-align: center;
     padding: 0; ">
       {% for publication in site.data.publications %}
+      {{publication}}
       {% if publication.article_year == year %}
       <li style="border: 1px solid rgb(0,191,111); margin-bottom: 50px;  padding: 20px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);" ><h4 style="margin-bottom: 40px;">{{ publication.article_title }}</h4>
       
@@ -177,7 +179,7 @@ hr{
 
 <script>
   
-    for (let i =2001; i<2025;i++){
+    for (let i =2001; i<2030;i++){
       
     $("."+i).click(function(event) {
       

@@ -162,11 +162,11 @@ article a:hover, a:active, a:focus {
 	 animation: slide-in 1s ease-in both 0.5s;
 }
  .post__content {
-	 padding: 2em 0;
+	 padding:  0;
 }
  @media (min-width: 54em) {
 	 .post__content {
-		 padding: 0 4em;
+		 padding: 0 2em;
 	}
 }
  .post__time {
@@ -178,7 +178,7 @@ article a:hover, a:active, a:focus {
 	 letter-spacing: 0.1em;
 }
  .post__header {
-	 overflow: hidden;
+	 overflow: none;
 }
  .post__header span {
 	 display: inline-block;
@@ -274,7 +274,7 @@ article a:hover, a:active, a:focus {
         <header>
           <time class="post__time">{{page.date | date: "%-d %B %Y" }} </time>
           
-          <h1 class="post__header"><span>{{page.title }}</span></h1>
+          <h1 id="post__header"class="post__header"><span>{{page.title }}</span></h1>
           
         </header>
       
@@ -295,4 +295,11 @@ $("img").one("load", function() {
     if(this.complete) {
         $(this).load(); 
     }
-  });</script>
+  });
+const title = document.getElementById('post__header');
+const titleWords = title.textContent.split(' ');
+if (titleWords.length > 5) {
+    title.style.fontSize = '2.5em';  
+    title.style.lineHeight = '1.2';
+}
+  </script>

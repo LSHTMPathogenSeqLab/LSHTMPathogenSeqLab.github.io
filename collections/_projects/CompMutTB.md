@@ -11,7 +11,7 @@ people:
   - jphelan
   - tgclark
   
-highlighted: true
+highlighted: false
 ---
 
 We have developed the CompMut-TB framework which can assist with identifying compensatory mutations which is important for more precise genome-based profiling of drug-resistant TB strains and to further understanding of the evolutionary mechanisms that underpin drug-resistance.

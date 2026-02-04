@@ -433,8 +433,20 @@ font-size: 12px;
   overflow-x: hidden;
   
 }
-.about-us{
+@media (min-width:1600px){
+  .about-us{
   height: 100vh;
+}
+}
+@media (max-width:1600px){
+  .about-us{
+  height: 150vh;
+}
+}
+@media (max-width:1500px){
+  .about-us{
+  height: 200vh;
+}
 }
 h5{
   padding:25px;
@@ -604,7 +616,7 @@ h5{
           <div class="row">
             <div class="col-6 mt-3">
               <p>Viruses</p>
-              <span><a href="{{site.url}}/themes/Viruses"><i class="fa-solid fa-virus-covid fa-2x"></i></a></span>
+              <span><a href="{{site.url}}/themes/viruses"><i class="fa-solid fa-virus-covid fa-2x"></i></a></span>
             </div>
             <div class="col-6 mt-3">
               <p>Software</p>
